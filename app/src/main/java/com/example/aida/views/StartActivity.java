@@ -1,5 +1,8 @@
 package com.example.aida.views;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,23 +11,16 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
-
 import com.example.aida.R;
+import com.example.aida.models.City;
+import com.example.aida.models.Country;
 import com.example.aida.models.Food;
 import com.example.aida.models.User;
-import com.example.aida.models.City;
 import com.example.aida.utility.Constants;
-import com.example.aida.models.Country;
 import com.example.aida.utility.Methods;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -54,7 +50,7 @@ public class StartActivity extends AppCompatActivity {
         setSupportActionBar(topAppBar);
 
         botAppBar = findViewById(R.id.bar_bot_nav_startup);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_login, R.id.navigation_register, R.id.navigation_register_temp).build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_login, R.id.navigation_register, R.id.navigation_register_new).build();
 
         navController = Navigation.findNavController(this, R.id.nav_host_startup);
 

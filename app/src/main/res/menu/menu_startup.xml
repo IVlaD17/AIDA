@@ -8,4 +8,8 @@
         android:id="@+id/navigation_register"
         android:icon="@drawable/ic_favorite_icon"
         android:title="@string/title_acc_create"/>
+    <item
+        android:id="@+id/navigation_register_new"
+        android:icon="@drawable/ic_favorite_icon"
+        android:title="NRegister"/>
 </menu>

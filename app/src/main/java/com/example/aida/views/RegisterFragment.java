@@ -1,13 +1,6 @@
 package com.example.aida.views;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +10,18 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.example.aida.R;
 import com.example.aida.models.City;
-import com.example.aida.models.User;
-import com.example.aida.viewModels.RegisterViewModel;
-import com.example.aida.utility.Constants;
 import com.example.aida.models.Country;
+import com.example.aida.models.User;
+import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
+import com.example.aida.viewModels.RegisterViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -74,7 +72,7 @@ public class RegisterFragment extends Fragment {
         viewModel = ViewModelProviders.of(this).get(RegisterViewModel.class);
     }
 
-    public void onRegisterButtonTapped(View view) {
+    private void onRegisterButtonTapped(View view) {
         attemptRegistration();
     }
     private void attemptRegistration() {
