@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_journal_view"
+        android:icon="@drawable/ic_favorite_icon"
+        android:title="@string/title_journal_view"/>
+    <item
+        android:id="@+id/navigation_foods_view"
+        android:icon="@drawable/ic_favorite_icon"
+        android:title="@string/title_foods"/>
+    <item
+        android:id="@+id/navigation_meal_calculator"
+        android:icon="@drawable/ic_favorite_icon"
+        android:title="@string/title_meal"/>
+    <item
+        android:id="@+id/navigation_account_view"
+        android:icon="@drawable/ic_favorite_icon"
+        android:title="@string/title_user_profile"/>
+</menu>

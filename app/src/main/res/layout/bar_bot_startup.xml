@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Start-up Bottom Bar Template -->
+<!-- Used Before User is Logged In -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bar_bot_startup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.StartActivity">
+
+    <!-- Main content -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bar_bot_nav_startup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/color_primary"
+        app:itemIconTint="@color/color_on_primary"
+        app:itemTextColor="@color/color_on_primary"
+        app:menu="@menu/menu_startup"/>
+</FrameLayout>

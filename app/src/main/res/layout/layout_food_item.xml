@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/food_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:minHeight="75dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/keyline_1">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/food_card_header"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/sample_image"
+            app:tint="?colorSurface"
+            app:tintMode="multiply" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/food_card_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/food_card_header"
+            app:srcCompat="@drawable/sample_avatar"
+            app:tint="?colorSurface"
+            app:tintMode="multiply" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/food_card_expand_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:layout_marginEnd="@dimen/keyline_0"
+            android:onClick="onFoodCardExpandClick"
+            app:icon='@drawable/ic_expand_more'
+            app:iconGravity="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/food_card_header" />
+
+        <TextView
+            android:id="@+id/food_card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:text="@string/food_title"
+            android:textAppearance="?textAppearanceHeadline6"
+            app:layout_constraintStart_toEndOf="@id/food_card_avatar"
+            app:layout_constraintTop_toBottomOf="@id/food_card_header" />
+
+        <TextView
+            android:id="@+id/food_card_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:text="@string/food_subtitle"
+            android:textAppearance="?textAppearanceSubtitle1"
+            app:layout_constraintStart_toEndOf="@id/food_card_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/food_card_title" />
+
+        <TextView
+            android:id="@+id/food_card_body_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:maxLines="1"
+            android:text="@string/food_body"
+            android:textAppearance="?textAppearanceBody2"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toBottomOf="@id/food_card_subtitle"
+            app:layout_constraintEnd_toStartOf="@+id/food_card_body_right"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/food_card_body_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/keyline_4"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:maxLines="1"
+            android:text="@string/food_body"
+            android:textAppearance="?textAppearanceBody2"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBaseline_toBaselineOf="@+id/food_card_body_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/food_card_body_left" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/food_card_button_one"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_2"
+            android:layout_marginTop="@dimen/keyline_0"
+            android:layout_marginEnd="@dimen/keyline_0"
+            android:text="@string/btn_food_add"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/food_card_body_left" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

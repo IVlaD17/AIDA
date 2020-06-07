@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/journal_add_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="56dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".views.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/recordDateTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:hint="@string/hint_rec_date_entry"
+            app:layout_constraintEnd_toStartOf="@id/recordTimeTextInputEAF"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:onClick="onRecordingDateClick" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/recordTimeTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_rec_time_entry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/recordDateTextInputEAF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:onClick="onRecordingTimeClick" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/glucLvlTextInputEAF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_gluc_lvl_entry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recordTimeTextInputEAF"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/carbTextInputEAF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_carb_entry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/glucLvlTextInputEAF"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/medPrimaryExposedDropdownMenuEAF"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/hint_medication_entry"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/medPrimaryTextInputEAF"
+            app:layout_constraintEnd_toStartOf="@id/medPrimaryTextInputEAF"
+            app:layout_constraintHorizontal_weight="6"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <AutoCompleteTextView
+                android:id="@+id/medPrimaryFilledExposedDropdownEAF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/medPrimaryTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_med_amount_entry"
+            app:layout_constraintStart_toEndOf="@id/medPrimaryExposedDropdownMenuEAF"
+            app:layout_constraintTop_toBottomOf="@id/carbTextInputEAF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="4"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/medSecondaryExposedDropdownMenuEAF"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/hint_medication_entry"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/medSecondaryTextInputEAF"
+            app:layout_constraintEnd_toStartOf="@id/medSecondaryTextInputEAF"
+            app:layout_constraintHorizontal_weight="6"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <AutoCompleteTextView
+                android:id="@+id/medSecondaryFilledExposedDropdownEAF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/medSecondaryTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/hint_med_amount_entry"
+            app:layout_constraintStart_toEndOf="@id/medSecondaryExposedDropdownMenuEAF"
+            app:layout_constraintTop_toBottomOf="@+id/medPrimaryTextInputEAF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="4"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sleepSwitchEAF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:checked="false"
+            android:text="@string/swt_previous_sleep"
+            android:onClick="onSleepSwitchChanged"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medSecondaryTextInputEAF" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sleepSTTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_sleep_st_entry"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/sleepETTextInputEAF"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sleepSwitchEAF"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:onClick="onSleepTimeStartClick" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sleepETTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_sleep_en_entry"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/sleepSTTextInputEAF"
+            app:layout_constraintTop_toBottomOf="@+id/sleepSwitchEAF"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:onClick="onSleepTimeEndClick" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/physActExposedDropdownMenuEAF"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/lst_physical_activities"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sleepETTextInputEAF"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <AutoCompleteTextView
+                android:id="@+id/physActFilledExposedDropdownEAF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/physActSTTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_phys_act_st_entry"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/physActExposedDropdownMenuEAF"
+            app:layout_constraintEnd_toStartOf="@id/physActETTextInputEAF"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:onClick="onPhysActTimeStartClick" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/physActETTextInputEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_phys_act_en_entry"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/physActSTTextInputEAF"
+            app:layout_constraintTop_toBottomOf="@+id/physActExposedDropdownMenuEAF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:startIconDrawable="@drawable/ic_favorite_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="none"
+                android:onClick="onPhysActTimeEndClick" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/entryAddButtonEAF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="onJournalEntryAddButtonClick"
+            android:text="@string/btn_entry_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/physActETTextInputEAF" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

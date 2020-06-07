@@ -1,0 +1,206 @@
+<resources>
+    <string name="app_name">AIDA</string>
+    <string name="generic_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </string>
+
+    <!-- Titles -->
+    <string name="title_acc_create">Register</string>
+    <string name="title_acc_edit">Edit Account</string>
+    <string name="title_acc_view">View Account</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_conn">Connections</string>
+    <string name="title_foods">Foods</string>
+    <string name="title_journal_entry_add">Add Journal Entry</string>
+    <string name="title_journal_entry_edit">Edit Journal Entry</string>
+    <string name="title_journal_view">My Journal</string>
+    <string name="title_journal_view_g">Graphical Journal</string>
+    <string name="title_login">Login</string>
+    <string name="title_main">Main Menu</string>
+    <string name="title_meal">Meal Planner</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_user_profile">User Profile</string>
+    <string name="title_users_view">Users</string>
+
+    <string name="title_group_journal">Journal</string>
+    <string name="title_group_planner">Planner</string>
+    <string name="title_group_account">Account</string>
+    <string name="title_group_interact">Interactions</string>
+
+    <!-- Text Entries Hints -->
+    <string name="hint_address_entry">Address</string>
+    <string name="hint_carb_entry">Carbohydrates</string>
+    <string name="hint_email_entry">Email Address</string>
+    <string name="hint_gluc_lvl_entry">Glucose Levels</string>
+    <string name="hint_medication_entry">Medication</string>
+    <string name="hint_med_amount_entry">Quantity</string>
+    <string name="hint_name_f_entry">First Name</string>
+    <string name="hint_name_l_entry">Last Name</string>
+    <string name="hint_pass_entry">Password</string>
+    <string name="hint_pass_con_entry">Confirm Password</string>
+    <string name="hint_phys_act_st_entry">Activity Start</string>
+    <string name="hint_phys_act_en_entry">Activity End</string>
+    <string name="hint_quantity_entry">Quantity (Grams)</string>
+    <string name="hint_rec_date_entry">Entry Date</string>
+    <string name="hint_rec_time_entry">Entry Time</string>
+    <string name="hint_sleep_st_entry">Sleep Start</string>
+    <string name="hint_sleep_en_entry">Sleep End</string>
+    <string name="hint_telephone_entry">Telephone Number</string>
+
+    <!-- Button Texts -->
+    <string name="btn_account_create">Register</string>
+    <string name="btn_account_delete">Delete Account</string>
+    <string name="btn_account_edit">Edit Account</string>
+    <string name="btn_close">Close</string>
+    <string name="btn_connection_accept">Accept Connection</string>
+    <string name="btn_connection_add">Add Connection</string>
+    <string name="btn_connection_block">Block Connection</string>
+    <string name="btn_connection_decline">Decline Connection</string>
+    <string name="btn_connection_remove">Remove Connection</string>
+    <string name="btn_entry_add">Add Entry</string>
+    <string name="btn_entry_edit">Edit</string>
+    <string name="btn_entry_remove">Remove</string>
+    <string name="btn_food_add">Add To Meal</string>
+    <string name="btn_food_remove">Remove</string>
+    <string name="btn_food_save">Save</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+
+    <!-- Selection Control Labels -->
+    <string name="chk_auto_login">Login Automatically</string>
+    <string name="swt_previous_sleep">Has Slept</string>
+    <string name="lst_cities">City</string>
+    <string name="lst_countries">Country</string>
+    <string name="lst_diabetes">Diabetes Type</string>
+    <string name="lst_foods">Food Item</string>
+    <string name="lst_physical_activities">Physical Activity</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <!-- Entry Template -->
+    <string name="entry_title">07/01/2020 Entry</string>
+    <string name="entry_subtitle">07:07</string>
+    <string name="entry_body">Glucose Level: 125 \nCarbohydrates: 90 \nHumalog Insulin: 15 Units \nLantus Insulin: 0 Units \nSleep: None \nBasketball: 10:00 - 12:00</string>
+
+    <!-- Food Template -->
+    <string name="food_title">Pizza</string>
+    <string name="food_subtitle">Fast Food</string>
+    <string name="food_body">Carbohydrates: 100 of which sugars: 100 \nFat: 100 of which saturates: 100 \nEnergy: 100 Fibre: 100 \nProtein: 100 Salt: 100</string>
+
+    <!-- Profile Template -->
+    <string name="profile_title">Vlad Ionica</string>
+    <string name="profile_subtitle">Type 1 DM</string>
+    <string name="profile_body">Address: United Kingdom, Sunderland, 129 Roker Avenue, Flat 3</string>
+    <string name="profile_email">test.email@gmail.com</string>
+    <string name="profile_phone">+44 777 514 3222</string>
+
+    <!-- Default Stuff -->
+    <string name="theme_name_hint">Theme name...</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="greyhound">Greyhound divisively hello coldly wonderfully marginally far upon excluding.</string>
+
+    <!--Main-->
+    <string name="tab_title_instructions">Instructions</string>
+    <string name="tab_title_components">Components</string>
+    <string name="tab_title_theme_summary">Theme summary</string>
+
+    <!--Instructions-->
+    <string name="instructions_how_to">Build your own custom Material Theme by remixing and styling these themeable components.\n\nModify the variables in your project\'s color.xml, type.xml and shape.xml files to see your custom styles cascade through Material Components for Android.</string>
+    <string name="instructions_how_to_title">How to use theme builder</string>
+    <string name="instructions_options_title">Theme builder options</string>
+    <string name="instructions_enable_dark_title">Enable dark theme</string>
+
+    <!--Component-->
+    <string name="text_headline_6">Headline 6</string>
+    <string name="text_body_2">Body 2</string>
+    <string name="text_button">Button</string>
+    <string name="text_overline">Overline</string>
+
+    <string name="button_label_title">Button</string>
+    <string name="button_left_button_label">Left</string>
+    <string name="button_center_button_label">Center</string>
+    <string name="button_right_button_label">Right</string>
+
+    <string name="fab_label_title">FAB</string>
+
+    <string name="card_label_title">Card</string>
+
+    <string name="chip_label_title">Chips</string>
+    <string name="chip_action_title">Action</string>
+    <string name="chip_filter_title">Filter</string>
+    <string name="chip_choice_title">Choice</string>
+    <string name="chip_entry_title">Entry</string>
+
+    <string name="top_app_bar_label_title">Top app bar</string>
+    <string name="app_bar_menu_share">Share</string>
+    <string name="app_bar_menu_search">Search</string>
+    <string name="app_bar_menu_bookmark">Bookmark</string>
+
+    <string name="drawer_label_title">Drawer</string>
+
+    <string name="text_field_label_title" description="Label text for a text field [CHAR LIMIT=50]">Text field</string>
+    <string name="text_field_hint_text">Label</string>
+
+    <string name="bottom_nav_label_title">Bottom navigation</string>
+    <string name="bottom_nav_favorites_title">Favorites</string>
+    <string name="bottom_nav_music_title">Music</string>
+    <string name="bottom_nav_places_title">Places</string>
+    <string name="bottom_nav_news_title">News</string>
+
+    <string name="switch_label_title">Switch</string>
+
+    <string name="radio_button_label_title">Radio button</string>
+
+    <string name="checkbox_label_title">Checkbox</string>
+
+    <string name="bottom_app_bar_label_title">Bottom app bar</string>
+
+    <string name="tabs_label_title">Tabs</string>
+
+    <string name="snackbar_label_title">Snackbar</string>
+    <string name="snackbar_message_text">Marked as favorite</string>
+    <string name="snackbar_action_text">Action</string>
+
+    <string name="dialog_label_title">Dialog</string>
+    <string name="dialog_button_label">Show dialog</string>
+
+    <string name="bottom_sheet_label_title">Bottom sheet</string>
+    <string name="bottom_sheet_button_label">Show bottom sheet</string>
+
+
+    <!--Theme Summary-->
+    <string name="label_color_scheme_title">Color scheme</string>
+
+    <string name="label_shape_system_title">Shape system</string>
+    <string name="shape_appearance_small_label">S</string>
+    <string name="shape_appearance_medium_label">M</string>
+    <string name="shape_appearance_large_label">L</string>
+
+    <string name="label_typography_scale_title">Typography scale</string>
+    <string name="text_appearance_h1_label">H1</string>
+    <string name="text_appearance_h2_label">H2</string>
+    <string name="text_appearance_h3_label">H3</string>
+    <string name="text_appearance_h4_label">H4</string>
+    <string name="text_appearance_h5_label">H5</string>
+    <string name="text_appearance_h6_label">H6</string>
+    <string name="text_appearance_subtitle_1_label">Subtitle 1</string>
+    <string name="text_appearance_subtitle_2_label">Subtitle 2</string>
+    <string name="text_appearance_body_1_label">Body 1</string>
+    <string name="text_appearance_body_2_label">Body 2</string>
+    <string name="text_appearance_button_label">Button</string>
+    <string name="text_appearance_caption_label">Caption</string>
+    <string name="text_appearance_overline_label">Overline</string>
+</resources>

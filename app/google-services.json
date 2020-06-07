@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "644895715212",
+    "firebase_url": "https://aida-8fb1b.firebaseio.com",
+    "project_id": "aida-8fb1b",
+    "storage_bucket": "aida-8fb1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644895715212:android:1b5283350e6cc3fb0730a9",
+        "android_client_info": {
+          "package_name": "com.example.aida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644895715212-e742jtsqkb9n8log1j6g0ir8dlmf95na.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aida",
+            "certificate_hash": "f517a3329d2d254f82c1a75ff54208c216d37a18"
+          }
+        },
+        {
+          "client_id": "644895715212-925etf8r1pupt3kmb8ctlqsnh6guun6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc6koqa0MOmO2dmv08awifbtTswcG0NOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644895715212-925etf8r1pupt3kmb8ctlqsnh6guun6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
