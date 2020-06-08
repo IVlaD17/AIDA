@@ -50,7 +50,7 @@ public class StartActivity extends AppCompatActivity {
         setSupportActionBar(topAppBar);
 
         botAppBar = findViewById(R.id.bar_bot_nav_startup);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_login, R.id.navigation_register, R.id.navigation_register_new).build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_login, R.id.navigation_register).build();
 
         navController = Navigation.findNavController(this, R.id.nav_host_startup);
 
@@ -65,7 +65,7 @@ public class StartActivity extends AppCompatActivity {
         initFoodItems();
     }
 
-    public void displayLoginFragment(){
+    public void displayLoginFragment() {
         navController.navigate(R.id.navigation_login);
     }
     public void displayMainActivity(User user){

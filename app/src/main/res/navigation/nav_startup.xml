@@ -15,11 +15,5 @@
         android:id="@+id/navigation_register"
         android:name="com.example.aida.views.RegisterFragment"
         android:label="@string/title_acc_create"
-        tools:layout="@layout/fragment_register" />
-
-    <fragment
-        android:id="@+id/navigation_register_new"
-        android:name="com.example.aida.views.AccountManagement"
-        android:label="New Registration Form"
         tools:layout="@layout/fragment_account_management" />
 </navigation>

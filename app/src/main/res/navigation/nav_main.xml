@@ -15,7 +15,7 @@
         android:id="@+id/navigation_account_edit"
         android:name="com.example.aida.views.AccountEditFragment"
         android:label="@string/title_acc_edit"
-        tools:layout="@layout/fragment_account_edit"/>
+        tools:layout="@layout/fragment_account_management"/>
 
     <fragment
         android:id="@+id/navigation_account_view"
@@ -58,10 +58,4 @@
         android:name="com.example.aida.views.MealCalculatorFragment"
         android:label="@string/title_meal"
         tools:layout="@layout/fragment_meal_calculator"/>
-
-    <fragment
-        android:id="@+id/navigation_edit_new"
-        android:name="com.example.aida.views.AccountManagement"
-        android:label="Edit Account New"
-        tools:layout="@layout/fragment_account_management" />
 </navigation>

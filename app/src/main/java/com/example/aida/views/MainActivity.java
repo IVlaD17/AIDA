@@ -147,12 +147,32 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    public static void navigateToAccountCreateScreen(){
+        navController.navigate(R.id.navigation_account_create);
+    }
+    public static void navigateToAccountEditScreen() {
+        navController.navigate(R.id.navigation_account_edit);
+    }
+    public static void navigateToAccountViewScreen() {
+        navController.navigate(R.id.navigation_account_view);
+    }
+    public static void navigateToFoodsViewScreen() {
+        navController.navigate(R.id.navigation_foods_view);
+    }
+    public static void navigateToEntryAddScreen() {
+        navController.navigate(R.id.navigation_journal_add_entry);
+    }
     public static void navigateToEntryEditScreen(){
         navController.navigate(R.id.navigation_journal_edit_entry);
     }
-
-    public void navigateToAccountViewScreen() {
-        navController.navigate(R.id.navigation_account_view);
+    public static void navigateToJournalScreen() {
+        navController.navigate(R.id.navigation_journal_view);
+    }
+    public static void navigateToLoginScreen() {
+        navController.navigate(R.id.navigation_login);
+    }
+    public static void navigateToMealCalculatorScreen() {
+        navController.navigate(R.id.navigation_meal_calculator);
     }
 
     public void closeDateTimePicker(View view){
@@ -170,20 +190,19 @@ public class MainActivity extends AppCompatActivity {
 
         toggleInputFieldsInteractions(view);
     }
-
     public void displayDatePicker(View view){
         cCalendarCardView.setVisibility(View.VISIBLE);
         cCalendarCardView.setCardElevation(5.0f);
         toggleInputFieldsInteractions(view);
     }
-
     public void displayTimePicker(View view){
         cClockCardView.setVisibility(View.VISIBLE);
         cClockCardView.setCardElevation(5.0f);
         toggleInputFieldsInteractions(view);
     }
-
-    public void displayAccountFragment(View view){ navController.navigate(R.id.navigation_account_view); }
+    public void displayAccountFragment(View view){
+        navController.navigate(R.id.navigation_account_view);
+    }
 
     public void onAccountCardExpandClick(View view){
         ConstraintLayout cardLayout = (ConstraintLayout) view.getParent();
@@ -207,17 +226,15 @@ public class MainActivity extends AppCompatActivity {
             expandButton.setIconResource(R.drawable.ic_expand_more);
         }
     }
-
-    public void onAccountEditNavButtonClick(View view) { navController.navigate(R.id.navigation_edit_new); }
-
+    public void onAccountEditNavButtonClick(View view) {
+        navController.navigate(R.id.navigation_account_edit);
+    }
     public void onAccountEditButtonClick(View view){
         accountEdit();
     }
-
     public void onAccountDeleteButtonClick(View view){
         accountDelete();
     }
-
     public void onEntryCardExpandClick(View view){
         ConstraintLayout cardLayout = (ConstraintLayout) view.getParent();
 
@@ -239,7 +256,6 @@ public class MainActivity extends AppCompatActivity {
             expandButton.setIconResource(R.drawable.ic_expand_more);
         }
     }
-
     public void onFoodCardExpandClick(View view){
         ConstraintLayout cardLayout = (ConstraintLayout) view.getParent();
 
@@ -262,40 +278,26 @@ public class MainActivity extends AppCompatActivity {
             expandButton.setIconResource(R.drawable.ic_expand_more);
         }
     }
-
     public void onJournalEntryAddButtonClick(View view){
         journalEntryAdd();
     }
-
     public void onJournalEntryEditButtonClick(View view){
         journalEntryEdit();
     }
-
     public void onJournalEntryRemoveButtonClick(View view){
         journalEntryDelete(view);
     }
-
     public void onJournalFABClick(View view){
         navController.navigate(R.id.navigation_journal_add_entry);
     }
-
     public void onMealEntryRemoveButtonClick(View view) { mealEntryDelete(view); }
-
     public void onMealEntrySaveButtonClick(View view) { mealEntrySave(view); }
-
     public void onMealPlannerFABClick(View view){
         mealEntryAdd();
     }
-
-    public void onNavHeaderClick(View view){
-        displayAccountFragment(view);
-        drawer.closeDrawers();
-    }
-
     public void onPhysActDropdownClicked(View view){
         Toast.makeText(this, "OnPhysActDropdownClicked", Toast.LENGTH_LONG).show();
     }
-
     public void onPhysActTimeStartClick(View view){
         TextInputLayout cClickedLayout = findViewById(R.id.physActSTTextInputEAF);
 
@@ -305,7 +307,6 @@ public class MainActivity extends AppCompatActivity {
         cPickerOpener = cClickedLayout;
         displayTimePicker(view);
     }
-
     public void onPhysActTimeEndClick(View view){
         TextInputLayout cClickedLayout = findViewById(R.id.physActETTextInputEAF);
 
@@ -315,11 +316,9 @@ public class MainActivity extends AppCompatActivity {
         cPickerOpener = cClickedLayout;
         displayTimePicker(view);
     }
-
     public void onPickerCardCloseButtonClick(View view){
         closeDateTimePicker(view);
     }
-
     public void onRecordingDateClick(View view){
         TextInputLayout cClickedLayout = findViewById(R.id.recordDateTextInputEAF);
 
@@ -329,7 +328,6 @@ public class MainActivity extends AppCompatActivity {
         cPickerOpener = cClickedLayout;
         displayDatePicker(view);
     }
-
     public void onRecordingTimeClick(View view){
         TextInputLayout cClickedLayout = findViewById(R.id.recordTimeTextInputEAF);
 
@@ -339,7 +337,6 @@ public class MainActivity extends AppCompatActivity {
         cPickerOpener = cClickedLayout;
         displayTimePicker(view);
     }
-
     public void onSleepSwitchChanged(View view){
         SwitchMaterial sleepSwitch = findViewById(R.id.sleepSwitchEAF);
         TextInputLayout startTimeInputLayout;
@@ -372,7 +369,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
     public void onSleepTimeStartClick(View view){
         TextInputLayout cClickedLayout = findViewById(R.id.sleepSTTextInputEAF);
 
@@ -382,7 +378,6 @@ public class MainActivity extends AppCompatActivity {
         cPickerOpener = cClickedLayout;
         displayTimePicker(view);
     }
-
     public void onSleepTimeEndClick(View view){
         TextInputLayout cClickedLayout = findViewById(R.id.sleepETTextInputEAF);
 
@@ -397,7 +392,6 @@ public class MainActivity extends AppCompatActivity {
         database.collection(Constants.USERS_PATH).document(loggedUser.getId()).delete();
         displayStartActivity();
     }
-
     void accountEdit(){
         TextInputLayout fNameInputField;
         TextInputLayout lNameInputField;
@@ -448,12 +442,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), Constants.ERR_EMPTY_FIELD, Toast.LENGTH_LONG).show();
         }
     }
-
     void displayStartActivity(){
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
     }
-
     void journalEntryAdd(){
         MDate date;
         MTime time = null;
@@ -560,7 +552,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), Constants.ERR_EMPTY_FIELD, Toast.LENGTH_LONG).show();
         }
     }
-
     void journalEntryDelete(View view){
         MaterialCardView cardLayout = (MaterialCardView) view.getParent().getParent();
         RecyclerView journalView = findViewById(R.id.recyclerViewJVF);
@@ -571,7 +562,6 @@ public class MainActivity extends AppCompatActivity {
         journalEntries.remove(entryPosition);
         JournalViewFragment.getMealRecyclerViewAdapter().notifyDataSetChanged();
     }
-
     void journalEntryEdit(){
         SwitchMaterial sleepSwitch;
         TextInputLayout dateInputField;
@@ -652,14 +642,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), Constants.ERR_EMPTY_FIELD, Toast.LENGTH_LONG).show();
         }
     }
-
     void mealEntryAdd(){
         Meal newMealEntry = new Meal();
 
         mealEntries.add(newMealEntry);
         MealCalculatorFragment.getMealRecyclerViewAdapter().notifyDataSetChanged();
     }
-
     void mealEntryDelete(View view){
         MaterialCardView cardLayout = (MaterialCardView) view.getParent().getParent();
         RecyclerView calculatorView = findViewById(R.id.recyclerViewMCF);
@@ -670,7 +658,6 @@ public class MainActivity extends AppCompatActivity {
 
         updateTotalCarbsLabel();
     }
-
     void mealEntrySave(View view){
         MaterialCardView cardLayout = (MaterialCardView) view.getParent().getParent();
         RecyclerView calculatorView = findViewById(R.id.recyclerViewMCF);
@@ -707,7 +694,6 @@ public class MainActivity extends AppCompatActivity {
             if (cInputView != cPickerOpener)
                 cInputView.setEnabled(!cInputView.isEnabled());
     }
-
     void updateTotalCarbsLabel(){
         int totalCarbs = 0;
 

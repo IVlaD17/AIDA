@@ -16,4 +16,7 @@
         android:id="@+id/navigation_account_view"
         android:icon="@drawable/ic_favorite_icon"
         android:title="@string/title_user_profile"/>
+    <item
+        android:icon="@drawable/ic_favorite_icon"
+        android:title="More"/>
 </menu>
