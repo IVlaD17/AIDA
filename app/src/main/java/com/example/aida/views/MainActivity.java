@@ -1,5 +1,13 @@
 package com.example.aida.views;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,36 +19,27 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.widget.DatePicker;
-import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
-
 import com.example.aida.R;
-import com.example.aida.viewAdapters.JournalRecyclerViewAdapter;
+import com.example.aida.models.Activity;
+import com.example.aida.models.Country;
 import com.example.aida.models.Food;
 import com.example.aida.models.JournalEntry;
 import com.example.aida.models.Meal;
 import com.example.aida.models.Medication;
-import com.example.aida.models.Activity;
 import com.example.aida.models.Sleep;
 import com.example.aida.models.User;
 import com.example.aida.utility.Constants;
-import com.example.aida.models.Country;
 import com.example.aida.utility.MDate;
 import com.example.aida.utility.MTime;
 import com.example.aida.utility.Methods;
+import com.example.aida.viewAdapters.JournalRecyclerViewAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -152,6 +151,10 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_journal_edit_entry);
     }
 
+    public void navigateToAccountViewScreen() {
+        navController.navigate(R.id.navigation_account_view);
+    }
+
     public void closeDateTimePicker(View view){
         if(cCalendarCardView.getVisibility() == View.VISIBLE) {
             MDate cTempDate = new MDate(cDatePicker.getDayOfMonth(), cDatePicker.getMonth(), cDatePicker.getYear());
@@ -205,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onAccountEditNavButtonClick(View view) { navController.navigate(R.id.navigation_account_edit); }
+    public void onAccountEditNavButtonClick(View view) { navController.navigate(R.id.navigation_edit_new); }
 
     public void onAccountEditButtonClick(View view){
         accountEdit();

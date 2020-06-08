@@ -39,6 +39,17 @@ public class AccountManagement extends Fragment {
 
     private String attemptResult;
 
+    private TextInputLayout fNameInputField;
+    private TextInputLayout lNameInputField;
+    private TextInputLayout phoneInputField;
+    private TextInputLayout emailInputField;
+    private TextInputLayout passInputField;
+    private TextInputLayout cPassInputField;
+    private TextInputLayout countryInputField;
+    private TextInputLayout cityInputField;
+    private TextInputLayout addressInputField;
+    private TextInputLayout diabetesInputField;
+
     private AutoCompleteTextView countriesDropdown;
     private AutoCompleteTextView citiesDropdown;
     private AutoCompleteTextView diabetesDropdown;
@@ -52,27 +63,8 @@ public class AccountManagement extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_account_management, container, false);
 
-        Button completeButton = view.findViewById(R.id.saveButtonAM);
-
-        if (getActivity() instanceof StartActivity) {
-            completeButton.setText(R.string.btn_register);
-            completeButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v){
-                    onRegisterButtonTapped(v);
-                }
-            });
-        }
-
-        if (getActivity() instanceof MainActivity) {
-            completeButton.setText(R.string.btn_account_edit);
-            completeButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v){
-                    onEditButtonTapped(v);
-                }
-            });
-        }
+        initFields();
+        initButtons();
 
         initCountriesDropdown();
         initCitiesDropdown();
@@ -95,6 +87,8 @@ public class AccountManagement extends Fragment {
     }
 
     private void attemptRegistration(){
+        attemptResult = "";
+
         TextInputLayout fNameInputField = view.findViewById(R.id.fNameTextInputAM);
         TextInputLayout lNameInputField = view.findViewById(R.id.lNameTextInputAM);
         TextInputLayout phoneInputField = view.findViewById(R.id.phoneTextInputAM);
@@ -169,7 +163,123 @@ public class AccountManagement extends Fragment {
         }
     }
     private void attemptEdit(){
+        attemptResult = "";
 
+        TextInputLayout fNameInputField;
+        TextInputLayout lNameInputField;
+        TextInputLayout phoneInputField;
+        TextInputLayout passInputField;
+        TextInputLayout cPassInputField;
+        TextInputLayout countryInputField;
+        TextInputLayout cityInputField;
+        TextInputLayout addressInputField;
+        TextInputLayout diabetesInputField;
+
+        fNameInputField = view.findViewById(R.id.fNameTextInputAM);
+        String newFName = fNameInputField.getEditText().getText().toString();
+        lNameInputField = view.findViewById(R.id.lNameTextInputAM);
+        String newLName = lNameInputField.getEditText().getText().toString();
+        phoneInputField = view.findViewById(R.id.phoneTextInputAM);
+        String newPhone = phoneInputField.getEditText().getText().toString();
+        passInputField = view.findViewById(R.id.passwordTextInputAM);
+        String pass = passInputField.getEditText().getText().toString();
+        cPassInputField = view.findViewById(R.id.cPasswordTextInputAM);
+        String cPass = cPassInputField.getEditText().getText().toString();
+        countryInputField = view.findViewById(R.id.countryExposedDropdownMenuAM);
+        String newCountry = countryInputField.getEditText().getText().toString();
+        cityInputField = view.findViewById(R.id.cityExposedDropdownMenuAM);
+        String newCity = cityInputField.getEditText().getText().toString();
+        addressInputField = view.findViewById(R.id.addressTextInputAM);
+        String newAddress = addressInputField.getEditText().getText().toString();
+        diabetesInputField = view.findViewById(R.id.diabetesExposedDropdownMenuAM);
+        String newDiabetesType = diabetesInputField.getEditText().getText().toString();
+
+        ArrayList<Country> countries = new ArrayList<>();
+
+        if(getActivity() instanceof StartActivity){
+            countries = StartActivity.countries;
+        } else if(getActivity() instanceof MainActivity){
+            countries = MainActivity.countries;
+        }
+
+        final FirebaseFirestore database = FirebaseFirestore.getInstance();
+
+        if(!Methods.isNullOrWhiteSpace(newFName) && !Methods.isNullOrWhiteSpace(newLName) && !Methods.isNullOrWhiteSpace(newPhone)
+                && !Methods.isNullOrWhiteSpace(pass) && !Methods.isNullOrWhiteSpace(cPass) && !Methods.isNullOrWhiteSpace(newCountry)
+                && !Methods.isNullOrWhiteSpace(newCity) && !Methods.isNullOrWhiteSpace(newAddress) && !Methods.isNullOrWhiteSpace(newDiabetesType)) {
+            if (pass.equals(cPass) && pass.equals(MainActivity.loggedUser.getPassword())) {
+                User user = new User(MainActivity.loggedUser.getId(), MainActivity.loggedUser.getEmailAddress(), pass, newFName, newLName, newPhone,
+                        newAddress, newCountry, newCity, newDiabetesType, countries);
+                database.collection(Constants.USERS_PATH).document(MainActivity.loggedUser.getId()).update(user.getDBFormat());
+
+                ((MainActivity)getActivity()).navigateToAccountViewScreen();
+            }
+            else if(!pass.equals(cPass)){
+                attemptResult = Constants.ERR_PASS_NO_MATCH;
+            }
+            else {
+                attemptResult = Constants.ERR_PASS_WRONG;
+            }
+        }
+        else {
+            attemptResult = Constants.ERR_EMPTY_FIELD;
+        }
+
+        Toast.makeText(getActivity().getApplicationContext(), attemptResult, Toast.LENGTH_SHORT).show();
+    }
+
+    private void initFields() {
+        if(getActivity() instanceof MainActivity) {
+            fNameInputField = view.findViewById(R.id.fNameTextInputAM);
+            fNameInputField.getEditText().setText(MainActivity.loggedUser.getFirstName());
+
+            lNameInputField = view.findViewById(R.id.lNameTextInputAM);
+            lNameInputField.getEditText().setText(MainActivity.loggedUser.getLastName());
+
+            phoneInputField = view.findViewById(R.id.phoneTextInputAM);
+            phoneInputField.getEditText().setText(MainActivity.loggedUser.getTelephone());
+
+            emailInputField = view.findViewById(R.id.emailTextInputAM);
+            emailInputField.getEditText().setText(MainActivity.loggedUser.getEmailAddress());
+
+            passInputField = view.findViewById(R.id.passwordTextInputAM);
+            cPassInputField = view.findViewById(R.id.cPasswordTextInputAM);
+
+            countryInputField = view.findViewById(R.id.countryExposedDropdownMenuAM);
+            countryInputField.getEditText().setText(MainActivity.loggedUser.getCountry().toString());
+
+            cityInputField = view.findViewById(R.id.cityExposedDropdownMenuAM);
+            cityInputField.getEditText().setText(MainActivity.loggedUser.getCity().toString());
+
+            addressInputField = view.findViewById(R.id.addressTextInputAM);
+            addressInputField.getEditText().setText(MainActivity.loggedUser.getAddress());
+
+            diabetesInputField = view.findViewById(R.id.diabetesExposedDropdownMenuAM);
+            diabetesInputField.getEditText().setText(MainActivity.loggedUser.getDiabetesType());
+        }
+    }
+    private void initButtons() {
+        Button completeButton = view.findViewById(R.id.saveButtonAM);
+
+        if (getActivity() instanceof StartActivity) {
+            completeButton.setText(R.string.btn_register);
+            completeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    onRegisterButtonTapped(v);
+                }
+            });
+        }
+
+        if (getActivity() instanceof MainActivity) {
+            completeButton.setText(R.string.btn_account_edit);
+            completeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    onEditButtonTapped(v);
+                }
+            });
+        }
     }
 
     private void initCitiesDropdown() {
