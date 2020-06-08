@@ -1,6 +1,5 @@
 package com.example.aida.views;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -12,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -39,7 +37,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -53,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar topAppBar;
     BottomNavigationView botAppBar;
-    DrawerLayout drawer;
-
-    NavigationView navView;
 
     AppBarConfiguration appBarConfiguration;
 
@@ -147,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    // Navigation Methods
     public static void navigateToAccountCreateScreen(){
         navController.navigate(R.id.navigation_account_create);
     }
@@ -200,9 +195,6 @@ public class MainActivity extends AppCompatActivity {
         cClockCardView.setCardElevation(5.0f);
         toggleInputFieldsInteractions(view);
     }
-    public void displayAccountFragment(View view){
-        navController.navigate(R.id.navigation_account_view);
-    }
 
     public void onAccountCardExpandClick(View view){
         ConstraintLayout cardLayout = (ConstraintLayout) view.getParent();
@@ -227,13 +219,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onAccountEditNavButtonClick(View view) {
-        navController.navigate(R.id.navigation_account_edit);
-    }
-    public void onAccountEditButtonClick(View view){
-        accountEdit();
-    }
-    public void onAccountDeleteButtonClick(View view){
-        accountDelete();
+        navigateToAccountEditScreen();
     }
     public void onEntryCardExpandClick(View view){
         ConstraintLayout cardLayout = (ConstraintLayout) view.getParent();
@@ -388,64 +374,6 @@ public class MainActivity extends AppCompatActivity {
         displayTimePicker(view);
     }
 
-    void accountDelete(){
-        database.collection(Constants.USERS_PATH).document(loggedUser.getId()).delete();
-        displayStartActivity();
-    }
-    void accountEdit(){
-        TextInputLayout fNameInputField;
-        TextInputLayout lNameInputField;
-        TextInputLayout phoneInputField;
-        TextInputLayout passInputField;
-        TextInputLayout cPassInputField;
-        TextInputLayout countryInputField;
-        TextInputLayout cityInputField;
-        TextInputLayout addressInputField;
-        TextInputLayout diabetesInputField;
-
-        fNameInputField = findViewById(R.id.fNameTextInputAEF);
-        String newFName = fNameInputField.getEditText().getText().toString();
-        lNameInputField = findViewById(R.id.lNameTextInputAEF);
-        String newLName = lNameInputField.getEditText().getText().toString();
-        phoneInputField = findViewById(R.id.phoneTextInputAEF);
-        String newPhone = phoneInputField.getEditText().getText().toString();
-        passInputField = findViewById(R.id.passwordTextInputAEF);
-        String pass = passInputField.getEditText().getText().toString();
-        cPassInputField = findViewById(R.id.cPasswordTextInputAEF);
-        String cPass = cPassInputField.getEditText().getText().toString();
-        countryInputField = findViewById(R.id.countryExposedDropdownMenuAEF);
-        String newCountry = countryInputField.getEditText().getText().toString();
-        cityInputField = findViewById(R.id.cityExposedDropdownMenuAEF);
-        String newCity = cityInputField.getEditText().getText().toString();
-        addressInputField = findViewById(R.id.addressTextInputAEF);
-        String newAddress = addressInputField.getEditText().getText().toString();
-        diabetesInputField = findViewById(R.id.diabetesExposedDropdownMenuAEF);
-        String newDiabetesType = diabetesInputField.getEditText().getText().toString();
-
-        if(!Methods.isNullOrWhiteSpace(newFName) && !Methods.isNullOrWhiteSpace(newLName) && !Methods.isNullOrWhiteSpace(newPhone)
-                && !Methods.isNullOrWhiteSpace(pass) && !Methods.isNullOrWhiteSpace(cPass) && !Methods.isNullOrWhiteSpace(newCountry)
-                && !Methods.isNullOrWhiteSpace(newCity) && !Methods.isNullOrWhiteSpace(newAddress) && !Methods.isNullOrWhiteSpace(newDiabetesType)) {
-            if (pass.equals(cPass) && pass.equals(loggedUser.getPassword())) {
-                User user = new User(loggedUser.getId(), loggedUser.getEmailAddress(), pass, newFName, newLName, newPhone,
-                        newAddress, newCountry, newCity, newDiabetesType, countries);
-                database.collection(Constants.USERS_PATH).document(loggedUser.getId()).update(user.getDBFormat());
-                navController.navigate(R.id.navigation_account_view);
-            }
-            else if(!pass.equals(cPass)){
-                Toast.makeText(getApplicationContext(), Constants.ERR_PASS_NO_MATCH, Toast.LENGTH_LONG).show();
-            }
-            else {
-                Toast.makeText(getApplicationContext(), Constants.ERR_PASS_WRONG, Toast.LENGTH_LONG).show();
-            }
-        }
-        else {
-            Toast.makeText(getApplicationContext(), Constants.ERR_EMPTY_FIELD, Toast.LENGTH_LONG).show();
-        }
-    }
-    void displayStartActivity(){
-        Intent intent = new Intent(this, StartActivity.class);
-        startActivity(intent);
-    }
     void journalEntryAdd(){
         MDate date;
         MTime time = null;
