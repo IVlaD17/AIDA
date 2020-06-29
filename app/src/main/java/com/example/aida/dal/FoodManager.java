@@ -40,20 +40,7 @@ public class FoodManager extends RestService {
                     ArrayList<Food> foods = new ArrayList<>();
                     List<DocumentSnapshot> documents = task.getResult().getDocuments();
                     for(DocumentSnapshot document : documents){
-                        String id = document.getId();
-                        String name = document.getData().get("name").toString();
-                        String category = document.getData().get("category").toString();
-                        float carbs = Float.valueOf(document.getData().get("carbohydrates").toString());
-                        float sugars = Float.valueOf(document.getData().get("sugars").toString());
-                        float fat = Float.valueOf(document.getData().get("fat").toString());
-                        float saturates = Float.valueOf(document.getData().get("saturates").toString());
-                        float energy = Float.valueOf(document.getData().get("energy").toString());
-                        float fiber = Float.valueOf(document.getData().get("fiber").toString());
-                        float protein = Float.valueOf(document.getData().get("protein").toString());
-                        float salt = Float.valueOf(document.getData().get("salt").toString());
-
-                        Food food = new Food(id, name, category, carbs, sugars, fat, saturates, energy, fiber, protein, salt);
-                        foods.add(food);
+                        foods.add(genFood(document));
                     }
 
                     //TODO: Add Callback Method

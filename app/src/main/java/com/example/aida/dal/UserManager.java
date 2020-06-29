@@ -23,6 +23,7 @@ public class UserManager extends RestService {
 
         String diabetes = document.getData().get("diabetesType").toString();
 
+        //TODO: Replace NULL Country and City with actual Values
         return new User(id, email, password, firstName, lastName, telephone, address, null, null, diabetes);
     }
 
