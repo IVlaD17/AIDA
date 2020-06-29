@@ -6,22 +6,22 @@ public class UserManager extends RestService {
     //TODO: Add ViewModel Constructor
 
     // Used for Registration
-    public boolean create(User user) {
-        return false;
+    public void create(User user) {
+
     }
 
     // Used for Logging In
-    public User read(String email, String password) {
-        return null;
+    public void read(String email, String password) {
+
     }
 
     // Used for Account Editing
-    public boolean update(User user) {
-        return false;
+    public void update(User user) {
+
     }
 
     // Used for Account Deletion
-    public boolean delete(User user) {
-        return false;
+    public void delete(User user) {
+
     }
 }
