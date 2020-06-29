@@ -1,10 +1,47 @@
 package com.example.aida.dal;
 
+import com.example.aida.models.Activity;
 import com.example.aida.models.JournalEntry;
+import com.example.aida.models.Medication;
+import com.example.aida.models.Sleep;
 import com.example.aida.models.User;
+import com.example.aida.utility.MDate;
+import com.example.aida.utility.MTime;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class JournalManager extends RestService {
     //TODO: Add ViewModel Constructor
+
+    // Used for Generating a JEntry Object from a Database Document
+    private JournalEntry genJEntry(DocumentSnapshot document){
+        String id = document.getId();
+
+        MDate date = new MDate(document.getData().get("date").toString());
+        MTime time = new MTime(document.getData().get("time").toString());
+
+        int glycaemia = Integer.valueOf(document.getData().get("glucose").toString());
+        int carbs = Integer.valueOf(document.getData().get("carbohydrates").toString());
+
+        Boolean hasSlept = Boolean.valueOf(document.getData().get("hasSlept").toString());
+        MTime sleepStart = new MTime(document.getData().get("sleepEnd").toString());
+        MTime sleepEnd = new MTime(document.getData().get("sleepStart").toString());
+        Sleep sleep = new Sleep(hasSlept, sleepStart, sleepEnd);
+
+        String activityType = document.getData().get("physicalActivityType").toString();
+        MTime activityStart = new MTime(document.getData().get("physicalActivityStart").toString());
+        MTime activityEnd = new MTime(document.getData().get("physicalActivityEnd").toString());
+        Activity physicalActivity = new Activity(activityType, activityStart, activityEnd);
+
+        String primaryMedicationName = document.getData().get("primaryMedicationName").toString();
+        float primaryMedicationQuantity = Float.valueOf(document.getData().get("primaryMedicationQuantity").toString());
+        Medication primaryMedication = new Medication(primaryMedicationName, primaryMedicationQuantity);
+
+        String secondaryMedicationName = document.getData().get("secondaryMedicationName").toString();
+        float secondaryMedicationQuantity = Float.valueOf(document.getData().get("secondaryMedicationQuantity").toString());
+        Medication secondaryMedication = new Medication(secondaryMedicationName, secondaryMedicationQuantity);
+
+        return new JournalEntry(id, date, time, glycaemia, carbs, primaryMedication, secondaryMedication, sleep, physicalActivity);
+    }
 
     // Used for Getting Journal Entries Recorded by the User from the Database
     public void read(User user){
