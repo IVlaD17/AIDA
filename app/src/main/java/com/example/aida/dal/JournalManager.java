@@ -5,7 +5,7 @@ import com.example.aida.models.User;
 
 import java.util.ArrayList;
 
-public class JournalManager {
+public class JournalManager extends RestService {
     // Used for Getting Journal Entries Recorded by the User from the Database
     public ArrayList<JournalEntry> read(User user){
         return null;

@@ -5,7 +5,7 @@ import com.example.aida.models.Country;
 
 import java.util.ArrayList;
 
-public class LocationManager {
+public class LocationManager extends RestService {
     // Used for Getting Countries from the Database
     public ArrayList<Country> readCountries(){
         return null;
