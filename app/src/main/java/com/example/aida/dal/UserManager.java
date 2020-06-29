@@ -3,6 +3,8 @@ package com.example.aida.dal;
 import com.example.aida.models.User;
 
 public class UserManager extends RestService {
+    //TODO: Add ViewModel Constructor
+
     // Used for Registration
     public boolean create(User user) {
         return false;

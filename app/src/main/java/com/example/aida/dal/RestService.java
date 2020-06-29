@@ -3,6 +3,7 @@ package com.example.aida.dal;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RestService {
+    //TODO: Add ViewModel Reference
     protected FirebaseFirestore database;
 
     protected String usersPath = "users";
@@ -14,4 +15,6 @@ public class RestService {
     public RestService(){
         database = FirebaseFirestore.getInstance();
     }
+
+    //TODO: Add ViewModel Constructor
 }

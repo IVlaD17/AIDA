@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LocationManager extends RestService {
+    //TODO: Add ViewModel Constructor
+
     // Used for Getting Countries from the Database
     public void readCountries(){
         database.collection(countriesPath).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
