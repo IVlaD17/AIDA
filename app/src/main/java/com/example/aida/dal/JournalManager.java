@@ -1,5 +1,7 @@
 package com.example.aida.dal;
 
+import androidx.annotation.NonNull;
+
 import com.example.aida.models.Activity;
 import com.example.aida.models.JournalEntry;
 import com.example.aida.models.Medication;
@@ -7,7 +9,13 @@ import com.example.aida.models.Sleep;
 import com.example.aida.models.User;
 import com.example.aida.utility.MDate;
 import com.example.aida.utility.MTime;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class JournalManager extends RestService {
     //TODO: Add ViewModel Constructor
@@ -45,21 +53,35 @@ public class JournalManager extends RestService {
 
     // Used for Getting Journal Entries Recorded by the User from the Database
     public void read(User user){
+        database.collection(entriesPath).whereEqualTo("userID", user.getId()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    ArrayList<JournalEntry> entries = new ArrayList<>();
+                    List<DocumentSnapshot> documents = task.getResult().getDocuments();
+                    for(DocumentSnapshot document : documents){
+                        JournalEntry newEntry = genJEntry(document);
+                        entries.add(newEntry);
+                    }
 
+                    //TODO: Add Callback Method
+                }
+            }
+        });
     }
 
     // Used for Adding a new Journal Entry in the Database
     public void create(JournalEntry entry){
-
+        database.collection(entriesPath).document().set(entry.getDBFormat());
     }
 
     // Used for Editing a Journal Entry in the Database
     public void update(JournalEntry entry){
-
+        database.collection(entriesPath).document(entry.getId()).update(entry.getDBFormat());
     }
 
     // Used for Deleting a Journal Entry from the Database
     public void delete(JournalEntry entry){
-
+        database.collection(entriesPath).document(entry.getId()).delete();
     }
 }
