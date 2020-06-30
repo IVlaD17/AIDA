@@ -4,13 +4,6 @@ import com.example.aida.utility.Constants;
 import com.example.aida.utility.MTime;
 
 public class Activity {
-    public enum ActivityTypes{
-        NONE { public String toString() {return "No activity";} },
-        FOOTBALL { public String toString() {return "Football";} },
-        BASKETBALL { public String toString() {return "Basketball";} },
-        TENNIS { public String toString() {return "Tennis";} }
-    }
-
     private ActivityTypes type;
     private MTime startTime;
     private MTime endTime;
