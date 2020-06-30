@@ -1,4 +1,4 @@
-package com.example.aida.models;
+package com.example.aida.models.journalModels;
 
 public class Medication {
     private String name;

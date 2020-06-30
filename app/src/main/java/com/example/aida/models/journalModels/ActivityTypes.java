@@ -1,4 +1,4 @@
-package com.example.aida.models;
+package com.example.aida.models.journalModels;
 
 public enum ActivityTypes {
     NONE { public String toString() {return "No activity";} },

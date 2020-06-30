@@ -1,9 +1,9 @@
-package com.example.aida.models;
+package com.example.aida.models.journalModels;
 
-import com.example.aida.views.MainActivity;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.MDate;
 import com.example.aida.utility.MTime;
+import com.example.aida.views.MainActivity;
 
 import java.util.HashMap;
 import java.util.Map;

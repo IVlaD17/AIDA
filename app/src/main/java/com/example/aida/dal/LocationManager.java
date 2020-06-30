@@ -2,8 +2,8 @@ package com.example.aida.dal;
 
 import androidx.annotation.NonNull;
 
-import com.example.aida.models.City;
-import com.example.aida.models.Country;
+import com.example.aida.models.userModels.City;
+import com.example.aida.models.userModels.Country;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;

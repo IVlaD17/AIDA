@@ -16,9 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.aida.R;
-import com.example.aida.models.City;
-import com.example.aida.models.Country;
-import com.example.aida.models.User;
+import com.example.aida.models.userModels.City;
+import com.example.aida.models.userModels.Country;
+import com.example.aida.models.userModels.User;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
 import com.example.aida.viewModels.AccountManagementViewModel;

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aida.views.MainActivity;
 import com.example.aida.R;
-import com.example.aida.models.JournalEntry;
+import com.example.aida.models.journalModels.JournalEntry;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 

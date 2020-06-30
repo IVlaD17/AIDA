@@ -2,7 +2,7 @@ package com.example.aida.dal;
 
 import androidx.annotation.NonNull;
 
-import com.example.aida.models.Food;
+import com.example.aida.models.foodModels.Food;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
