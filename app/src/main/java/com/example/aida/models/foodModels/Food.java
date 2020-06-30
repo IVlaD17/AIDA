@@ -1,4 +1,4 @@
-package com.example.aida.models;
+package com.example.aida.models.foodModels;
 
 import java.io.Serializable;
 
@@ -115,19 +115,5 @@ public class Food implements Serializable {
     @Override
     public String toString() {
         return name;
-    }
-
-    public String leftColumn(){
-        return "Carbohydrates: " + carbohydrates + "g\n" +
-                "Fat: " + fat + "g\n" +
-                "Energy: " + energy + "kcal\n" +
-                "Protein: " + protein + "g\n";
-    }
-
-    public String rightColumn(){
-        return "of which sugars: " + sugars + "g\n" +
-                "of which saturates: " + saturates + "g\n" +
-                "Fiber: " + fiber + "g\n" +
-                "Salt: " + salt + "g";
     }
 }

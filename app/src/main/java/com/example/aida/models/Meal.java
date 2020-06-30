@@ -1,5 +1,7 @@
 package com.example.aida.models;
 
+import com.example.aida.models.foodModels.Food;
+
 public class Meal {
 
     private int id;

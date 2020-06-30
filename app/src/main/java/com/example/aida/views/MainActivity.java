@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.aida.R;
 import com.example.aida.models.Activity;
 import com.example.aida.models.Country;
-import com.example.aida.models.Food;
+import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.JournalEntry;
 import com.example.aida.models.Meal;
 import com.example.aida.models.Medication;

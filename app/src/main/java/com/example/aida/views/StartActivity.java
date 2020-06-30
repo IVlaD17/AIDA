@@ -14,7 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.aida.R;
 import com.example.aida.models.City;
 import com.example.aida.models.Country;
-import com.example.aida.models.Food;
+import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.User;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;

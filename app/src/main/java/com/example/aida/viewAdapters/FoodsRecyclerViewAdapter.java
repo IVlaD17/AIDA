@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aida.R;
-import com.example.aida.models.Food;
+import com.example.aida.models.foodModels.Food;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -37,8 +37,8 @@ public class FoodsRecyclerViewAdapter extends RecyclerView.Adapter<FoodsRecycler
         Food foodItem = foodItems.get(position);
         holder.cardTitle.setText(foodItem.getName());
         holder.cardSubtitle.setText(foodItem.getCategory().toString());
-        holder.cardBodyLeft.setText(foodItem.leftColumn());
-        holder.cardBodyRight.setText(foodItem.rightColumn());
+        holder.cardBodyLeft.setText(foodItem.getName());
+        holder.cardBodyRight.setText(foodItem.getName());
     }
 
     @Override

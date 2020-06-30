@@ -2,7 +2,7 @@ package com.example.aida.utility;
 
 import com.example.aida.models.City;
 import com.example.aida.models.Country;
-import com.example.aida.models.Food;
+import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.JournalEntry;
 import com.example.aida.models.Medication;
 import com.example.aida.models.Activity;
