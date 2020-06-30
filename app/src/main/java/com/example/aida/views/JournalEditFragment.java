@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.aida.R;
-import com.example.aida.models.journalModels.ActivityTypes;
+import com.example.aida.models.ActivityTypes;
 import com.example.aida.utility.Constants;
 import com.example.aida.viewModels.JournalEditViewModel;
 import com.google.android.material.switchmaterial.SwitchMaterial;

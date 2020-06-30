@@ -2,7 +2,7 @@ package com.example.aida.viewModels;
 
 import androidx.lifecycle.ViewModel;
 
-import com.example.aida.models.userModels.User;
+import com.example.aida.models.User;
 
 public class AccountManagementViewModel extends ViewModel {
     private User user;

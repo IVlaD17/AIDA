@@ -1,4 +1,4 @@
-package com.example.aida.models.foodModels;
+package com.example.aida.models;
 
 public enum FoodCategories {
     NONE { public String toString() {return "None";} },

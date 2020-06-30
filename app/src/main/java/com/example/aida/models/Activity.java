@@ -1,4 +1,4 @@
-package com.example.aida.models.journalModels;
+package com.example.aida.models;
 
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.MTime;

@@ -1,4 +1,4 @@
-package com.example.aida.models.userModels;
+package com.example.aida.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;

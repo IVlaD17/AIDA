@@ -1,13 +1,13 @@
 package com.example.aida.utility;
 
-import com.example.aida.models.userModels.City;
-import com.example.aida.models.userModels.Country;
-import com.example.aida.models.foodModels.Food;
-import com.example.aida.models.journalModels.JournalEntry;
-import com.example.aida.models.journalModels.Medication;
-import com.example.aida.models.journalModels.Activity;
-import com.example.aida.models.journalModels.Sleep;
-import com.example.aida.models.userModels.User;
+import com.example.aida.models.City;
+import com.example.aida.models.Country;
+import com.example.aida.models.Food;
+import com.example.aida.models.JournalEntry;
+import com.example.aida.models.Medication;
+import com.example.aida.models.Activity;
+import com.example.aida.models.Sleep;
+import com.example.aida.models.User;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;

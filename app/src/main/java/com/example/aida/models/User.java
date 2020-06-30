@@ -1,4 +1,4 @@
-package com.example.aida.models.userModels;
+package com.example.aida.models;
 
 import com.example.aida.utility.Methods;
 

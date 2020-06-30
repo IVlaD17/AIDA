@@ -1,6 +1,4 @@
-package com.example.aida.models.mealModels;
-
-import com.example.aida.models.foodModels.Food;
+package com.example.aida.models;
 
 public class Meal {
 

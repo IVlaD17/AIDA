@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.aida.R;
+import com.example.aida.models.User;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
 import com.example.aida.viewModels.LoginViewModel;
