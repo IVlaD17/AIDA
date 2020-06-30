@@ -16,7 +16,7 @@ import com.example.aida.views.MainActivity;
 import com.example.aida.R;
 import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.foodModels.FoodCategories;
-import com.example.aida.models.Meal;
+import com.example.aida.models.mealModels.Meal;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
 import com.google.android.material.card.MaterialCardView;
@@ -47,14 +47,14 @@ public class MealRecyclerViewAdapter extends RecyclerView.Adapter<MealRecyclerVi
     public void onBindViewHolder(@NonNull final MealItemViewHolder holder, final int position) {
         final Meal mealEntry = mealEntries.get(position);
 
-        holder.cardTitle.setText(mealEntry.getFoodItem().getName());
-        holder.cardSubtitle.setText(mealEntry.getFoodItem().getCategory().toString());
+        holder.cardTitle.setText(mealEntry.getItem().getName());
+        holder.cardSubtitle.setText(mealEntry.getItem().getCategory().toString());
 
         ArrayAdapter<Food> adapter = new ArrayAdapter<>(holder.parentLayout.getContext(), R.layout.dropdown_menu_popup_item, MainActivity.foodItems);
         AutoCompleteTextView editTextFilledExposedDropdown = holder.cardDropdownMenu;
         editTextFilledExposedDropdown.setAdapter(adapter);
 
-        if(mealEntry.getFoodItem().getCategory() == FoodCategories.NONE) {
+        if(mealEntry.getItem().getCategory() == FoodCategories.NONE) {
             holder.cardQtyInput.setVisibility(View.GONE);
             holder.cardItmInput.setVisibility(View.VISIBLE);
         }
@@ -65,7 +65,7 @@ public class MealRecyclerViewAdapter extends RecyclerView.Adapter<MealRecyclerVi
 
         EditText qtyInput = holder.cardQtyInput.getEditText();
         if(qtyInput != null) {
-            qtyInput.setText(Integer.toString(mealEntry.getFoodAmount()));
+            qtyInput.setText(Float.toString(mealEntry.getQuantity()));
         }
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {

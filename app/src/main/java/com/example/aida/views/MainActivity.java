@@ -22,7 +22,7 @@ import com.example.aida.models.Activity;
 import com.example.aida.models.Country;
 import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.JournalEntry;
-import com.example.aida.models.Meal;
+import com.example.aida.models.mealModels.Meal;
 import com.example.aida.models.Medication;
 import com.example.aida.models.Sleep;
 import com.example.aida.models.User;
@@ -601,8 +601,8 @@ public class MainActivity extends AppCompatActivity {
             Food foodItem = Methods.findFoodItemByName(foodName, foodItems);
             int quantity = Integer.valueOf(foodQty);
 
-            mealEntries.get(entryPosition).setFoodItem(foodItem);
-            mealEntries.get(entryPosition).setFoodAmount(quantity);
+            mealEntries.get(entryPosition).setItem(foodItem);
+            mealEntries.get(entryPosition).setQuantity(quantity);
 
             updateTotalCarbsLabel();
         }
@@ -628,8 +628,8 @@ public class MainActivity extends AppCompatActivity {
         TextInputLayout totalCarbsTextInput = findViewById(R.id.totalCarbsLabelMCF);
 
         for(Meal entry : mealEntries){
-            if(entry.getFoodItem() != null)
-                totalCarbs += (entry.getFoodItem().getCarbohydrates() / 100) * entry.getFoodAmount();
+            if(entry.getItem() != null)
+                totalCarbs += (entry.getItem().getCarbohydrates() / 100) * entry.getQuantity();
         }
 
         totalCarbsTextInput.getEditText().setText(String.valueOf(totalCarbs));

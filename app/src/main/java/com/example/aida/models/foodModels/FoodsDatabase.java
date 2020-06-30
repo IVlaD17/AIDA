@@ -22,7 +22,7 @@ public class FoodsDatabase {
         this.foods = foods;
     }
 
-    public boolean createFoods(Food food) {
+    public boolean createFood(Food food) {
         if(foods.contains(food)) {
             return false;
         } else {
