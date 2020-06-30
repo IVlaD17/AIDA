@@ -131,7 +131,7 @@ public class User {
     }
 
     // Database Object Generator
-    public Map<String, Object> getDBFormat(){
+    public Map<String, Object> toDBObject(){
         Map<String, Object> user = new HashMap<>();
 
         user.put("firstName", firstName);
