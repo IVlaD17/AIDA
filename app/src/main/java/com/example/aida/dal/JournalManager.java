@@ -2,10 +2,10 @@ package com.example.aida.dal;
 
 import androidx.annotation.NonNull;
 
-import com.example.aida.models.Activity;
+import com.example.aida.models.journalModels.Activity;
 import com.example.aida.models.JournalEntry;
-import com.example.aida.models.Medication;
-import com.example.aida.models.Sleep;
+import com.example.aida.models.journalModels.Medication;
+import com.example.aida.models.journalModels.Sleep;
 import com.example.aida.models.User;
 import com.example.aida.models.dateTimeModels.VDate;
 import com.example.aida.models.dateTimeModels.VTime;

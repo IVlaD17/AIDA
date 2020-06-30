@@ -1,5 +1,9 @@
 package com.example.aida.models;
 
+import com.example.aida.models.journalModels.Activity;
+import com.example.aida.models.journalModels.ActivityTypes;
+import com.example.aida.models.journalModels.Medication;
+import com.example.aida.models.journalModels.Sleep;
 import com.example.aida.views.MainActivity;
 import com.example.aida.utility.Constants;
 import com.example.aida.models.dateTimeModels.VDate;
@@ -88,8 +92,8 @@ public class JournalEntry {
                 "Carbohydrates: " + carbohydrates + '\n' +
                 primaryMedication.getName() + ": " + primaryMedication.getQuantity() + '\n' +
                 secondaryMedication.getName() + ": " + secondaryMedication.getQuantity() + '\n' +
-                "Has Slept: " + sleep.getHasSlept() + " " + sleep.getStartTime() + " - " + sleep.getEndTime() + '\n' +
-                physicalActivity.getType() + ": " + physicalActivity.getStartTime() + " - " + physicalActivity.getEndTime();
+                "Has Slept: " + sleep.getHasSlept() + " " + sleep.getStart() + " - " + sleep.getEnd() + '\n' +
+                physicalActivity.getType() + ": " + physicalActivity.getStart() + " - " + physicalActivity.getEnd();
     }
 
     public String leftColumn(){
@@ -125,14 +129,14 @@ public class JournalEntry {
             returnedString += "N/A" + '\n';
         }
         else{
-            returnedString += sleep.getStartTime() + " - " + sleep.getEndTime() + '\n';
+            returnedString += sleep.getStart() + " - " + sleep.getEnd() + '\n';
         }
 
         if(physicalActivity.getType() == ActivityTypes.NONE){
             returnedString += "N/A";
         }
         else{
-            returnedString += physicalActivity.getStartTime() + " - " + physicalActivity.getEndTime();
+            returnedString += physicalActivity.getStart() + " - " + physicalActivity.getEnd();
         }
 
         return returnedString;
@@ -146,11 +150,11 @@ public class JournalEntry {
         dbEntry.put("carbohydrates", carbohydrates);
         dbEntry.put("glucose", glucose);
         dbEntry.put("hasSlept", sleep.getHasSlept().toString());
-        dbEntry.put("sleepStart", sleep.getStartTime().toString());
-        dbEntry.put("sleepEnd", sleep.getEndTime().toString());
+        dbEntry.put("sleepStart", sleep.getStart().toString());
+        dbEntry.put("sleepEnd", sleep.getEnd().toString());
         dbEntry.put("physicalActivityType", physicalActivity.getType().toString());
-        dbEntry.put("physicalActivityStart", physicalActivity.getStartTime().toString());
-        dbEntry.put("physicalActivityEnd", physicalActivity.getEndTime().toString());
+        dbEntry.put("physicalActivityStart", physicalActivity.getStart().toString());
+        dbEntry.put("physicalActivityEnd", physicalActivity.getEnd().toString());
         dbEntry.put("primaryMedicationName", primaryMedication.getName());
         dbEntry.put("primaryMedicationQuantity", primaryMedication.getQuantity());
         dbEntry.put("secondaryMedicationName", secondaryMedication.getName());

@@ -1,18 +1,16 @@
-package com.example.aida.models;
+package com.example.aida.models.journalModels;
 
 public class Medication {
     private String name;
     private float quantity;
 
+    // Default Constructor
     public Medication(){
         this.name = "None";
         this.quantity = 0;
     }
 
-    public Medication(String name) {
-        this.name = name;
-    }
-
+    // Generic Constructor
     public Medication(String name, float quantity) {
         this.name = name;
         this.quantity = quantity;

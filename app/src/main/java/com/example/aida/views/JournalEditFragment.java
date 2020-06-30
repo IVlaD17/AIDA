@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.aida.R;
-import com.example.aida.models.ActivityTypes;
+import com.example.aida.models.journalModels.ActivityTypes;
 import com.example.aida.utility.Constants;
 import com.example.aida.viewModels.JournalEditViewModel;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -165,19 +165,19 @@ public class JournalEditFragment extends Fragment {
         secondaryMedQtyInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getSecondaryMedication().getQuantity()));
 
         sleepStartInputField = cRootView.findViewById(R.id.sleepSTTextInputEEF);
-        sleepStartInputField.getEditText().setText(MainActivity.selectedEntry.getSleep().getStartTime().toString());
+        sleepStartInputField.getEditText().setText(MainActivity.selectedEntry.getSleep().getStart().toString());
 
         sleepEndInputField = cRootView.findViewById(R.id.sleepETTextInputEEF);
-        sleepEndInputField.getEditText().setText(MainActivity.selectedEntry.getSleep().getEndTime().toString());
+        sleepEndInputField.getEditText().setText(MainActivity.selectedEntry.getSleep().getEnd().toString());
 
         activityTypeInputField = cRootView.findViewById(R.id.physActExposedDropdownMenuEEF);
         activityTypeInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getType().toString());
 
         activityStartInputField = cRootView.findViewById(R.id.physActSTTextInputEEF);
-        activityStartInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getStartTime().toString());
+        activityStartInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getStart().toString());
 
         activityEndInputField = cRootView.findViewById(R.id.physActETTextInputEEF);
-        activityEndInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getEndTime().toString());
+        activityEndInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getEnd().toString());
 
         if(MainActivity.selectedEntry.getSleep().getHasSlept()){
             sleepStartInputField.setVisibility(View.VISIBLE);

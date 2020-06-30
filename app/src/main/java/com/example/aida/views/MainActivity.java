@@ -18,13 +18,13 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aida.R;
-import com.example.aida.models.Activity;
+import com.example.aida.models.journalModels.Activity;
 import com.example.aida.models.Country;
 import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.JournalEntry;
 import com.example.aida.models.mealModels.Meal;
-import com.example.aida.models.Medication;
-import com.example.aida.models.Sleep;
+import com.example.aida.models.journalModels.Medication;
+import com.example.aida.models.journalModels.Sleep;
 import com.example.aida.models.User;
 import com.example.aida.utility.Constants;
 import com.example.aida.models.dateTimeModels.VDate;

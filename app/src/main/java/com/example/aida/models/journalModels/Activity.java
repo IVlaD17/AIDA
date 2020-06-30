@@ -1,34 +1,34 @@
-package com.example.aida.models;
+package com.example.aida.models.journalModels;
 
 import com.example.aida.utility.Constants;
 import com.example.aida.models.dateTimeModels.VTime;
 
 public class Activity {
     private ActivityTypes type;
-    private VTime startTime;
-    private VTime endTime;
+    private VTime start;
+    private VTime end;
 
     // Default Constructor
     public Activity(){
         type = ActivityTypes.NONE;
-        startTime = Constants.ZERO_TIME;
-        endTime = Constants.ZERO_TIME;
+        start = Constants.ZERO_TIME;
+        end = Constants.ZERO_TIME;
     }
 
     // Generic Constructor
-    public Activity(ActivityTypes type, VTime startTime, VTime endTime) {
-        if(type == ActivityTypes.NONE){
-            startTime = Constants.ZERO_TIME;
-            endTime = Constants.ZERO_TIME;
-        }
-
+    public Activity(ActivityTypes type, VTime start, VTime end) {
         this.type = type;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        if(type == ActivityTypes.NONE){
+            this.start = Constants.ZERO_TIME;
+            this.end = Constants.ZERO_TIME;
+        } else {
+            this.start = start;
+            this.end = end;
+        }
     }
 
     // ActivityType String Parameter Constructor
-    public Activity(String type, VTime startTime, VTime endTime) {
+    public Activity(String type, VTime start, VTime end) {
         switch (type){
             case "Football":
                 this.type = ActivityTypes.FOOTBALL;
@@ -52,19 +52,19 @@ public class Activity {
                 this.type = ActivityTypes.NONE;
         }
 
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.start = start;
+        this.end = end;
     }
 
     public ActivityTypes getType() { return type; }
     public void setType(ActivityTypes type) { this.type = type; }
 
-    public VTime getStartTime() { return startTime; }
-    public void setStartTime(VTime startTime) { this.startTime = startTime; }
+    public VTime getStart() { return start; }
+    public void setStart(VTime start) { this.start = start; }
 
-    public VTime getEndTime() { return endTime; }
-    public void setEndTime(VTime endTime) { this.endTime = endTime; }
+    public VTime getEnd() { return end; }
+    public void setEnd(VTime end) { this.end = end; }
 
     @Override
-    public String toString() { return type.toString() + startTime + " - " + endTime; }
+    public String toString() { return type.toString() + " " + start + " - " + end; }
 }
