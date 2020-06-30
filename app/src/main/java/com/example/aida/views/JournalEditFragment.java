@@ -1,14 +1,7 @@
 package com.example.aida.views;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +10,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.example.aida.R;
-import com.example.aida.models.Activity;
-import com.example.aida.viewModels.JournalEditViewModel;
+import com.example.aida.models.ActivityTypes;
 import com.example.aida.utility.Constants;
+import com.example.aida.viewModels.JournalEditViewModel;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -186,7 +184,7 @@ public class JournalEditFragment extends Fragment {
             sleepEndInputField.setVisibility(View.VISIBLE);
         }
 
-        if(MainActivity.selectedEntry.getPhysicalActivity().getType() != Activity.ActivityTypes.NONE){
+        if(MainActivity.selectedEntry.getPhysicalActivity().getType() != ActivityTypes.NONE){
             activityStartInputField.setVisibility(View.VISIBLE);
             activityEndInputField.setVisibility(View.VISIBLE);
         }

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.aida.views.MainActivity;
 import com.example.aida.R;
 import com.example.aida.models.Food;
+import com.example.aida.models.FoodCategories;
 import com.example.aida.models.Meal;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
@@ -53,7 +54,7 @@ public class MealRecyclerViewAdapter extends RecyclerView.Adapter<MealRecyclerVi
         AutoCompleteTextView editTextFilledExposedDropdown = holder.cardDropdownMenu;
         editTextFilledExposedDropdown.setAdapter(adapter);
 
-        if(mealEntry.getFoodItem().getCategory() == Food.FoodCategories.NONE) {
+        if(mealEntry.getFoodItem().getCategory() == FoodCategories.NONE) {
             holder.cardQtyInput.setVisibility(View.GONE);
             holder.cardItmInput.setVisibility(View.VISIBLE);
         }

@@ -8,35 +8,11 @@ public class Activity {
     private MTime startTime;
     private MTime endTime;
 
+    // Default Constructor
     public Activity(){
         type = ActivityTypes.NONE;
         startTime = Constants.ZERO_TIME;
         endTime = Constants.ZERO_TIME;
-    }
-
-    public Activity(ActivityTypes type) {
-        this.type = type;
-        if(type == ActivityTypes.NONE){
-            this.startTime = Constants.ZERO_TIME;
-            this.endTime = Constants.ZERO_TIME;
-        }
-    }
-
-    // Constructor designed to be used when pulling data from the database
-    public Activity(String type, MTime startTime, MTime endTime) {
-        if(type.equals("None"))
-            this.type = ActivityTypes.NONE;
-        else if(type.equals("Football"))
-            this.type = ActivityTypes.FOOTBALL;
-        else if(type.equals("Basketball"))
-            this.type = ActivityTypes.BASKETBALL;
-        else if(type.equals("Tennis"))
-            this.type = ActivityTypes.TENNIS;
-        else
-            this.type = ActivityTypes.NONE;
-
-        this.startTime = startTime;
-        this.endTime = endTime;
     }
 
     // Generic Constructor
@@ -47,6 +23,35 @@ public class Activity {
         }
 
         this.type = type;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
+    // ActivityType String Parameter Constructor
+    public Activity(String type, MTime startTime, MTime endTime) {
+        switch (type){
+            case "Football":
+                this.type = ActivityTypes.FOOTBALL;
+            case "Basketball":
+                this.type = ActivityTypes.BASKETBALL;
+            case "Tennis":
+                this.type = ActivityTypes.TENNIS;
+            case "Handball":
+                this.type = ActivityTypes.HANDBALL;
+            case "Workout":
+                this.type = ActivityTypes.WORKOUT;
+            case "Running":
+                this.type = ActivityTypes.RUNNING;
+            case "Rugby":
+                this.type = ActivityTypes.RUGBY;
+            case "American Football":
+                this.type = ActivityTypes.AMERICAN_FOOTBALL;
+            case "Martial Arts":
+                this.type = ActivityTypes.MARTIAL_ARTS;
+            default:
+                this.type = ActivityTypes.NONE;
+        }
+
         this.startTime = startTime;
         this.endTime = endTime;
     }

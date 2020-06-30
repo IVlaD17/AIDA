@@ -15,6 +15,7 @@ public class Food implements Serializable {
     private float protein;
     private float salt;
 
+    // Default Constructor
     public Food(){
         id = "";
         name = "None";
@@ -29,44 +30,9 @@ public class Food implements Serializable {
         salt = 0;
     }
 
-    // Constructor designed to be used when pulling data from the database
-    public Food(String id, String name, String category, float carbohydrates, float sugars, float fat, float saturates, float energy, float fiber,
-                    float protein, float salt) {
-        if(category.equals("None"))
-            this.category = FoodCategories.NONE;
-        if(category.equals("Cereals"))
-            this.category = FoodCategories.CEREALS;
-        if(category.equals("Vegetables"))
-            this.category = FoodCategories.VEGETABLES;
-        if(category.equals("Beans"))
-            this.category = FoodCategories.BEANS;
-        if(category.equals("Fruits"))
-            this.category = FoodCategories.FRUITS;
-        if(category.equals("Dairy"))
-            this.category = FoodCategories.DAIRY;
-        if(category.equals("Meats"))
-            this.category = FoodCategories.MEATS;
-        if(category.equals("Fast Foods"))
-            this.category = FoodCategories.FAST_FOODS;
-        if(category.equals("Snacks"))
-            this.category = FoodCategories.SNACKS;
-
-        this.id = id;
-        this.name = name;
-        this.carbohydrates = carbohydrates;
-        this.sugars = sugars;
-        this.fat = fat;
-        this.saturates = saturates;
-        this.energy = energy;
-        this.fiber = fiber;
-        this.protein = protein;
-        this.salt = salt;
-    }
-
     // Generic constructor
-    public Food(String name, FoodCategories category, float carbohydrates, float sugars, float fat, float saturates, float energy, float fiber,
-                    float protein, float salt) {
-        this.id = "";
+    public Food(String id, String name, FoodCategories category, float carbohydrates, float sugars, float fat, float saturates, float energy, float fiber, float protein, float salt) {
+        this.id = id;
         this.name = name;
         this.category = category;
         this.carbohydrates = carbohydrates;
@@ -79,11 +45,31 @@ public class Food implements Serializable {
         this.salt = salt;
     }
 
-    public Food(String id, String name, FoodCategories category, float carbohydrates, float sugars, float fat, float saturates, float energy,
-                    float fiber, float protein, float salt) {
+    // FoodCategories String Parameter Constructor
+    public Food(String id, String name, String category, float carbohydrates, float sugars, float fat, float saturates, float energy, float fiber, float protein, float salt) {
+        switch (category){
+            case "Cereals":
+                this.category = FoodCategories.CEREALS;
+            case "Vegetables":
+                this.category = FoodCategories.VEGETABLES;
+            case "Beans":
+                this.category = FoodCategories.BEANS;
+            case "Fruits":
+                this.category = FoodCategories.FRUITS;
+            case "Dairy":
+                this.category = FoodCategories.DAIRY;
+            case "Meats":
+                this.category = FoodCategories.MEATS;
+            case "Fast Foods":
+                this.category = FoodCategories.FAST_FOODS;
+            case "Snacks":
+                this.category = FoodCategories.SNACKS;
+            default:
+                this.category = FoodCategories.NONE;
+        }
+
         this.id = id;
         this.name = name;
-        this.category = category;
         this.carbohydrates = carbohydrates;
         this.sugars = sugars;
         this.fat = fat;

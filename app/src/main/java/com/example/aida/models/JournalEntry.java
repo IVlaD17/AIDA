@@ -128,7 +128,7 @@ public class JournalEntry {
             returnedString += sleep.getStartTime() + " - " + sleep.getEndTime() + '\n';
         }
 
-        if(physicalActivity.getType() == Activity.ActivityTypes.NONE){
+        if(physicalActivity.getType() == ActivityTypes.NONE){
             returnedString += "N/A";
         }
         else{
