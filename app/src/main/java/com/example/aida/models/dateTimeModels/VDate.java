@@ -1,11 +1,11 @@
-package com.example.aida.utility;
+package com.example.aida.models.dateTimeModels;
 
-public class MDate {
+public class VDate {
     private int day;
     private int month;
     private int year;
 
-    public MDate(String date){
+    public VDate(String date){
         this.day = Integer.valueOf(String.valueOf(date.charAt(0)) + String.valueOf(date.charAt(1)));
         this.month = Integer.valueOf(String.valueOf(date.charAt(3)) + String.valueOf(date.charAt(4)));
         if(date.length() == 8)
@@ -15,20 +15,15 @@ public class MDate {
                     String.valueOf(date.charAt(8)) + String.valueOf(date.charAt(9)));
     }
 
-    public MDate(int day, int month, int year) {
+    public VDate(int day, int month, int year) {
         this.day = day;
         this.month = month;
         this.year = year;
     }
 
     public int getDay() { return day; }
-    //public void setDay(int day) { this.day = day; }
-
     public int getMonth() { return month; }
-    //public void setMonth(int month) { this.month = month; }
-
     public int getYear() { return year; }
-    //public void setYear(int year) { this.year = year; }
 
     @Override
     public String toString() {

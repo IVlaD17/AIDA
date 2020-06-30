@@ -2,6 +2,8 @@ package com.example.aida.utility;
 
 import com.example.aida.models.City;
 import com.example.aida.models.Country;
+import com.example.aida.models.dateTimeModels.VDate;
+import com.example.aida.models.dateTimeModels.VTime;
 import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.JournalEntry;
 import com.example.aida.models.Medication;
@@ -104,15 +106,15 @@ public class Methods {
         String dbSleepStart = document.getData().get("sleepStart").toString();
         String dbTime = document.getData().get("time").toString();
 
-        MDate date = new MDate(dbDate);
-        MTime time = new MTime(dbTime);
+        VDate date = new VDate(dbDate);
+        VTime time = new VTime(dbTime);
 
-        MTime sleepStart = new MTime(dbSleepStart);
-        MTime sleepEnd = new MTime(dbSleepEnd);
+        VTime sleepStart = new VTime(dbSleepStart);
+        VTime sleepEnd = new VTime(dbSleepEnd);
         Sleep sleep = new Sleep(dbHasSlept, sleepStart, sleepEnd);
 
-        MTime activityStart = new MTime(dbPhysicalActivityStart);
-        MTime activityEnd = new MTime(dbPhysicalActivityEnd);
+        VTime activityStart = new VTime(dbPhysicalActivityStart);
+        VTime activityEnd = new VTime(dbPhysicalActivityEnd);
         Activity physicalActivity = new Activity(dbPhysicalActivityType, activityStart, activityEnd);
 
         Medication primaryMedication = new Medication(dbPrimaryMedicationName, dbPrimaryMedicationQuantity);

@@ -2,8 +2,8 @@ package com.example.aida.models;
 
 import com.example.aida.views.MainActivity;
 import com.example.aida.utility.Constants;
-import com.example.aida.utility.MDate;
-import com.example.aida.utility.MTime;
+import com.example.aida.models.dateTimeModels.VDate;
+import com.example.aida.models.dateTimeModels.VTime;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,8 +11,8 @@ import java.util.Map;
 public class JournalEntry {
 
     private String id;
-    private MDate date;
-    private MTime time;
+    private VDate date;
+    private VTime time;
     private int glucose;
     private int carbohydrates;
     private Medication primaryMedication;
@@ -31,7 +31,7 @@ public class JournalEntry {
         physicalActivity = new Activity();
     }
 
-    public JournalEntry(MDate date, MTime time, int glucose, int carbohydrates, Medication primaryMedication, Medication secondaryMedication,
+    public JournalEntry(VDate date, VTime time, int glucose, int carbohydrates, Medication primaryMedication, Medication secondaryMedication,
                         Sleep sleep, Activity physicalActivity) {
         this.date = date;
         this.time = time;
@@ -43,7 +43,7 @@ public class JournalEntry {
         this.physicalActivity = physicalActivity;
     }
 
-    public JournalEntry(String id, MDate date, MTime time, int glucose, int carbohydrates, Medication primaryMedication, Medication secondaryMedication,
+    public JournalEntry(String id, VDate date, VTime time, int glucose, int carbohydrates, Medication primaryMedication, Medication secondaryMedication,
                         Sleep sleep, Activity physicalActivity) {
         this.id = id;
         this.date = date;
@@ -58,11 +58,11 @@ public class JournalEntry {
 
     public String getId() { return id; }
 
-    public MDate getDate() { return date; }
-    public void setDate(MDate date) { this.date = date; }
+    public VDate getDate() { return date; }
+    public void setDate(VDate date) { this.date = date; }
 
-    public MTime getTime() { return time; }
-    public void setTime(MTime time) { this.time = time; }
+    public VTime getTime() { return time; }
+    public void setTime(VTime time) { this.time = time; }
 
     public int getGlucose() { return glucose; }
     public void setGlucose(int glucose) { this.glucose = glucose; }

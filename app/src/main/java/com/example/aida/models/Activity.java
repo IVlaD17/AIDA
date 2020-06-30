@@ -1,12 +1,12 @@
 package com.example.aida.models;
 
 import com.example.aida.utility.Constants;
-import com.example.aida.utility.MTime;
+import com.example.aida.models.dateTimeModels.VTime;
 
 public class Activity {
     private ActivityTypes type;
-    private MTime startTime;
-    private MTime endTime;
+    private VTime startTime;
+    private VTime endTime;
 
     // Default Constructor
     public Activity(){
@@ -16,7 +16,7 @@ public class Activity {
     }
 
     // Generic Constructor
-    public Activity(ActivityTypes type, MTime startTime, MTime endTime) {
+    public Activity(ActivityTypes type, VTime startTime, VTime endTime) {
         if(type == ActivityTypes.NONE){
             startTime = Constants.ZERO_TIME;
             endTime = Constants.ZERO_TIME;
@@ -28,7 +28,7 @@ public class Activity {
     }
 
     // ActivityType String Parameter Constructor
-    public Activity(String type, MTime startTime, MTime endTime) {
+    public Activity(String type, VTime startTime, VTime endTime) {
         switch (type){
             case "Football":
                 this.type = ActivityTypes.FOOTBALL;
@@ -59,11 +59,11 @@ public class Activity {
     public ActivityTypes getType() { return type; }
     public void setType(ActivityTypes type) { this.type = type; }
 
-    public MTime getStartTime() { return startTime; }
-    public void setStartTime(MTime startTime) { this.startTime = startTime; }
+    public VTime getStartTime() { return startTime; }
+    public void setStartTime(VTime startTime) { this.startTime = startTime; }
 
-    public MTime getEndTime() { return endTime; }
-    public void setEndTime(MTime endTime) { this.endTime = endTime; }
+    public VTime getEndTime() { return endTime; }
+    public void setEndTime(VTime endTime) { this.endTime = endTime; }
 
     @Override
     public String toString() { return type.toString() + startTime + " - " + endTime; }

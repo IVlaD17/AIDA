@@ -27,8 +27,8 @@ import com.example.aida.models.Medication;
 import com.example.aida.models.Sleep;
 import com.example.aida.models.User;
 import com.example.aida.utility.Constants;
-import com.example.aida.utility.MDate;
-import com.example.aida.utility.MTime;
+import com.example.aida.models.dateTimeModels.VDate;
+import com.example.aida.models.dateTimeModels.VTime;
 import com.example.aida.utility.Methods;
 import com.example.aida.viewAdapters.JournalRecyclerViewAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -172,13 +172,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void closeDateTimePicker(View view){
         if(cCalendarCardView.getVisibility() == View.VISIBLE) {
-            MDate cTempDate = new MDate(cDatePicker.getDayOfMonth(), cDatePicker.getMonth(), cDatePicker.getYear());
+            VDate cTempDate = new VDate(cDatePicker.getDayOfMonth(), cDatePicker.getMonth(), cDatePicker.getYear());
             cPickerOpener.getEditText().setText(cTempDate.toString());
             cCalendarCardView.setVisibility(View.GONE);
         }
 
         if(cClockCardView.getVisibility() == View.VISIBLE) {
-            MTime cTempTime = new MTime(cTimePicker.getMinute(), cTimePicker.getHour());
+            VTime cTempTime = new VTime(cTimePicker.getMinute(), cTimePicker.getHour(), 0);
             cPickerOpener.getEditText().setText(cTempTime.toString());
             cClockCardView.setVisibility(View.GONE);
         }
@@ -375,12 +375,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void journalEntryAdd(){
-        MDate date;
-        MTime time = null;
-        MTime sleepStart = null;
-        MTime sleepEnd = null;
-        MTime activityStart = null;
-        MTime activityEnd = null;
+        VDate date;
+        VTime time = null;
+        VTime sleepStart = null;
+        VTime sleepEnd = null;
+        VTime activityStart = null;
+        VTime activityEnd = null;
 
         SwitchMaterial sleepSwitch;
         TextInputLayout dateInputField;
@@ -404,13 +404,13 @@ public class MainActivity extends AppCompatActivity {
         if(Methods.isNullOrWhiteSpace(dateInputField.getEditText().getText().toString()))
             date = Constants.ZERO_DATE;
         else
-            date = new MDate(dateInputField.getEditText().getText().toString());
+            date = new VDate(dateInputField.getEditText().getText().toString());
 
         timeInputField = findViewById(R.id.recordTimeTextInputEAF);
         if(Methods.isNullOrWhiteSpace(timeInputField.getEditText().getText().toString()))
             time = Constants.ZERO_TIME;
         else
-            time = new MTime(timeInputField.getEditText().getText().toString());
+            time = new VTime(timeInputField.getEditText().getText().toString());
 
         glucoseInputField = findViewById(R.id.glucLvlTextInputEAF);
         String glucoseLevelStr = glucoseInputField.getEditText().getText().toString();
@@ -434,13 +434,13 @@ public class MainActivity extends AppCompatActivity {
         if(Methods.isNullOrWhiteSpace(sleepStartInputField.getEditText().getText().toString()))
             sleepStart = Constants.ZERO_TIME;
         else
-            sleepStart = new MTime(sleepStartInputField.getEditText().getText().toString());
+            sleepStart = new VTime(sleepStartInputField.getEditText().getText().toString());
 
         sleepEndInputField = findViewById(R.id.sleepETTextInputEAF);
         if(Methods.isNullOrWhiteSpace(sleepEndInputField.getEditText().getText().toString()))
             sleepEnd = Constants.ZERO_TIME;
         else
-            sleepEnd = new MTime(sleepEndInputField.getEditText().getText().toString());
+            sleepEnd = new VTime(sleepEndInputField.getEditText().getText().toString());
 
         activityTypeInputField = findViewById(R.id.physActExposedDropdownMenuEAF);
         String activityType = activityTypeInputField.getEditText().getText().toString();
@@ -449,13 +449,13 @@ public class MainActivity extends AppCompatActivity {
         if(Methods.isNullOrWhiteSpace(activityStartInputField.getEditText().getText().toString()))
             activityStart = Constants.ZERO_TIME;
         else
-            activityStart = new MTime(activityStartInputField.getEditText().getText().toString());
+            activityStart = new VTime(activityStartInputField.getEditText().getText().toString());
 
         activityEndInputField = findViewById(R.id.physActETTextInputEAF);
         if(Methods.isNullOrWhiteSpace(activityEndInputField.getEditText().getText().toString()))
             activityEnd = Constants.ZERO_TIME;
         else
-            activityEnd = new MTime(activityEndInputField.getEditText().getText().toString());
+            activityEnd = new VTime(activityEndInputField.getEditText().getText().toString());
 
         if(!Methods.isNullOrWhiteSpace(glucoseLevelStr) && !Methods.isNullOrWhiteSpace(carbsAmountStr) && !Methods.isNullOrWhiteSpace(primaryMedName)
                 && !Methods.isNullOrWhiteSpace(primaryMedQtyStr) && !Methods.isNullOrWhiteSpace(secondaryMedName)
@@ -510,10 +510,10 @@ public class MainActivity extends AppCompatActivity {
         Boolean hasSlept = sleepSwitch.isChecked();
 
         dateInputField = findViewById(R.id.recordDateTextInputEEF);
-        MDate date = new MDate(dateInputField.getEditText().getText().toString());
+        VDate date = new VDate(dateInputField.getEditText().getText().toString());
 
         timeInputField = findViewById(R.id.recordTimeTextInputEEF);
-        MTime time = new MTime(timeInputField.getEditText().getText().toString());
+        VTime time = new VTime(timeInputField.getEditText().getText().toString());
 
         glucoseInputField = findViewById(R.id.glucLvlTextInputEEF);
         String glucoseLevelStr = glucoseInputField.getEditText().getText().toString();
@@ -534,19 +534,19 @@ public class MainActivity extends AppCompatActivity {
         String secondaryMedQtyStr = secondaryMedQtyInputField.getEditText().getText().toString();
 
         sleepStartInputField = findViewById(R.id.sleepSTTextInputEEF);
-        MTime sleepStart = new MTime(sleepStartInputField.getEditText().getText().toString());
+        VTime sleepStart = new VTime(sleepStartInputField.getEditText().getText().toString());
 
         sleepEndInputField = findViewById(R.id.sleepETTextInputEEF);
-        MTime sleepEnd = new MTime(sleepEndInputField.getEditText().getText().toString());
+        VTime sleepEnd = new VTime(sleepEndInputField.getEditText().getText().toString());
 
         activityTypeInputField = findViewById(R.id.physActExposedDropdownMenuEEF);
         String activityType = activityTypeInputField.getEditText().getText().toString();
 
         activityStartInputField = findViewById(R.id.physActSTTextInputEEF);
-        MTime activityStart = new MTime(activityStartInputField.getEditText().getText().toString());
+        VTime activityStart = new VTime(activityStartInputField.getEditText().getText().toString());
 
         activityEndInputField = findViewById(R.id.physActETTextInputEEF);
-        MTime activityEnd = new MTime(activityEndInputField.getEditText().getText().toString());
+        VTime activityEnd = new VTime(activityEndInputField.getEditText().getText().toString());
 
         if(!Methods.isNullOrWhiteSpace(glucoseLevelStr) && !Methods.isNullOrWhiteSpace(carbsAmountStr) && !Methods.isNullOrWhiteSpace(primaryMedName)
                 && !Methods.isNullOrWhiteSpace(primaryMedQtyStr) && !Methods.isNullOrWhiteSpace(secondaryMedName) && !Methods.isNullOrWhiteSpace(secondaryMedQtyStr)

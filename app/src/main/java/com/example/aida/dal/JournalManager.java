@@ -7,8 +7,8 @@ import com.example.aida.models.JournalEntry;
 import com.example.aida.models.Medication;
 import com.example.aida.models.Sleep;
 import com.example.aida.models.User;
-import com.example.aida.utility.MDate;
-import com.example.aida.utility.MTime;
+import com.example.aida.models.dateTimeModels.VDate;
+import com.example.aida.models.dateTimeModels.VTime;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,20 +24,20 @@ public class JournalManager extends RestService {
     private JournalEntry genJEntry(DocumentSnapshot document){
         String id = document.getId();
 
-        MDate date = new MDate(document.getData().get("date").toString());
-        MTime time = new MTime(document.getData().get("time").toString());
+        VDate date = new VDate(document.getData().get("date").toString());
+        VTime time = new VTime(document.getData().get("time").toString());
 
         int glycaemia = Integer.valueOf(document.getData().get("glucose").toString());
         int carbs = Integer.valueOf(document.getData().get("carbohydrates").toString());
 
         Boolean hasSlept = Boolean.valueOf(document.getData().get("hasSlept").toString());
-        MTime sleepStart = new MTime(document.getData().get("sleepEnd").toString());
-        MTime sleepEnd = new MTime(document.getData().get("sleepStart").toString());
+        VTime sleepStart = new VTime(document.getData().get("sleepEnd").toString());
+        VTime sleepEnd = new VTime(document.getData().get("sleepStart").toString());
         Sleep sleep = new Sleep(hasSlept, sleepStart, sleepEnd);
 
         String activityType = document.getData().get("physicalActivityType").toString();
-        MTime activityStart = new MTime(document.getData().get("physicalActivityStart").toString());
-        MTime activityEnd = new MTime(document.getData().get("physicalActivityEnd").toString());
+        VTime activityStart = new VTime(document.getData().get("physicalActivityStart").toString());
+        VTime activityEnd = new VTime(document.getData().get("physicalActivityEnd").toString());
         Activity physicalActivity = new Activity(activityType, activityStart, activityEnd);
 
         String primaryMedicationName = document.getData().get("primaryMedicationName").toString();

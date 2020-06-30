@@ -1,9 +1,13 @@
 package com.example.aida.utility;
 
+import com.example.aida.models.dateTimeModels.VDate;
+import com.example.aida.models.dateTimeModels.VDateTime;
+import com.example.aida.models.dateTimeModels.VTime;
+
 public class Constants {
-    public static MTime ZERO_TIME = new MTime(0, 0, 0);
-    public static MDate ZERO_DATE = new MDate(0, 0, 0);
-    public static MDateTime ZERO_DATE_TIME = new MDateTime(ZERO_DATE, ZERO_TIME);
+    public static VTime ZERO_TIME = new VTime(0, 0, 0);
+    public static VDate ZERO_DATE = new VDate(0, 0, 0);
+    public static VDateTime ZERO_DATE_TIME = new VDateTime(ZERO_DATE, ZERO_TIME);
     public static String[] DIABETES_TYPES = new String[] {"Type 1 DM", "Type 2 DM"};
     public static String[] T1_MEDS = new String[] { "None", "T1M1", "T1M2", "T1M3", "T1M4", "T1M5", "T1M6", "T1M7", "T1M8", "T1M9", "T1M10"};
     public static String[] T2_MEDS = new String[] { "None", "T2M1", "T2M2", "T2M3", "T2M4", "T2M5", "T2M6", "T2M7", "T2M8", "T2M9", "T2M10"};
