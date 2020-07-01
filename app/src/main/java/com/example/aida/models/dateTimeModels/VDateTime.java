@@ -4,6 +4,11 @@ public class VDateTime {
     private VDate date;
     private VTime time;
 
+    public VDateTime() {
+        this.date = new VDate();
+        this.time = new VTime();
+    }
+
     public VDateTime(VDate date, VTime time) {
         this.date = date;
         this.time = time;

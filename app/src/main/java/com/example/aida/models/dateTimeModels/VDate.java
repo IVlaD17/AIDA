@@ -5,6 +5,12 @@ public class VDate {
     private int month;
     private int year;
 
+    public VDate(){
+        this.day = 0;
+        this.month = 0;
+        this.year = 0;
+    }
+
     public VDate(String date){
         this.day = Integer.valueOf(String.valueOf(date.charAt(0)) + String.valueOf(date.charAt(1)));
         this.month = Integer.valueOf(String.valueOf(date.charAt(3)) + String.valueOf(date.charAt(4)));

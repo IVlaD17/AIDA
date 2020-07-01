@@ -1,6 +1,5 @@
 package com.example.aida.models.journalModels;
 
-import com.example.aida.utility.Constants;
 import com.example.aida.models.dateTimeModels.VTime;
 
 public class Activity {
@@ -11,16 +10,16 @@ public class Activity {
     // Default Constructor
     public Activity(){
         type = ActivityTypes.NONE;
-        start = Constants.ZERO_TIME;
-        end = Constants.ZERO_TIME;
+        start = new VTime();
+        end = new VTime();
     }
 
     // Generic Constructor
     public Activity(ActivityTypes type, VTime start, VTime end) {
         this.type = type;
         if(type == ActivityTypes.NONE){
-            this.start = Constants.ZERO_TIME;
-            this.end = Constants.ZERO_TIME;
+            this.start = new VTime();
+            this.end = new VTime();
         } else {
             this.start = start;
             this.end = end;

@@ -1,6 +1,5 @@
 package com.example.aida.models.journalModels;
 
-import com.example.aida.utility.Constants;
 import com.example.aida.models.dateTimeModels.VTime;
 
 public class Sleep {
@@ -11,8 +10,8 @@ public class Sleep {
     // Default Constructor
     public Sleep(){
         hasSlept = false;
-        start = Constants.ZERO_TIME;
-        end = Constants.ZERO_TIME;
+        start = new VTime();
+        end = new VTime();
     }
 
     // Generic Constructor
@@ -20,8 +19,8 @@ public class Sleep {
         this.hasSlept = hasSlept;
 
         if(!hasSlept){
-            this.start = Constants.ZERO_TIME;
-            this.end = Constants.ZERO_TIME;
+            this.start = new VTime();
+            this.end = new VTime();
         } else {
             this.start = start;
             this.end = end;

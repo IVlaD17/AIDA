@@ -17,8 +17,8 @@ public class Food implements Serializable {
 
     // Default Constructor
     public Food(){
-        id = "";
-        name = "None";
+        id = "NoID";
+        name = "NoName";
         category = FoodCategories.NONE;
         carbohydrates = 0;
         sugars = 0;

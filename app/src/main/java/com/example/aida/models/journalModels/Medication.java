@@ -6,7 +6,7 @@ public class Medication {
 
     // Default Constructor
     public Medication(){
-        this.name = "None";
+        this.name = "NoMedication";
         this.quantity = 0;
     }
 

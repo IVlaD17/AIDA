@@ -5,6 +5,12 @@ public class VTime {
     private int minute;
     private int hour;
 
+    public VTime() {
+        this.second = 0;
+        this.minute = 0;
+        this.hour = 0;
+    }
+
     public VTime(String time){
         this.hour = Integer.valueOf(String.valueOf(time.charAt(0)) + String.valueOf(time.charAt(1)));
         this.minute = Integer.valueOf(String.valueOf(time.charAt(3)) + String.valueOf(time.charAt(4)));
