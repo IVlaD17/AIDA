@@ -25,25 +25,8 @@ public class UserManager extends RestService {
         }
     }
 
-    // Used for Generating a Food Object from a Database Document
-    private User genUser(DocumentSnapshot document){
-        String id = document.getId();
-        String email = document.getData().get("email").toString();
-        String password = document.getData().get("password").toString();
-
-        String firstName = document.getData().get("firstName").toString();
-        String lastName = document.getData().get("lastName").toString();
-
-        String telephone = document.getData().get("telephone").toString();
-
-        String address = document.getData().get("address").toString();
-        String city = document.getData().get("city").toString();
-        String country = document.getData().get("country").toString();
-
-        String diabetes = document.getData().get("diabetesType").toString();
-
-        //TODO: Replace NULL Country and City with actual Values
-        return new User(id, firstName, lastName, diabetes, email, password, telephone, address, null, null);
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
     // Used for Registration
@@ -104,5 +87,26 @@ public class UserManager extends RestService {
     // Used for Account Deletion
     public void delete(User user) {
         database.collection(usersPath).document(user.getId()).delete();
+    }
+
+    // Used for Generating a Food Object from a Database Document
+    private User genUser(DocumentSnapshot document){
+        String id = document.getId();
+        String email = document.getData().get("email").toString();
+        String password = document.getData().get("password").toString();
+
+        String firstName = document.getData().get("firstName").toString();
+        String lastName = document.getData().get("lastName").toString();
+
+        String telephone = document.getData().get("telephone").toString();
+
+        String address = document.getData().get("address").toString();
+        String city = document.getData().get("city").toString();
+        String country = document.getData().get("country").toString();
+
+        String diabetes = document.getData().get("diabetesType").toString();
+
+        //TODO: Replace NULL Country and City with actual Values
+        return new User(id, firstName, lastName, diabetes, email, password, telephone, address, null, null);
     }
 }

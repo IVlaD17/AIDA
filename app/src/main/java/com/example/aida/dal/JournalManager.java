@@ -31,6 +31,10 @@ public class JournalManager extends RestService {
         }
     }
 
+    public ArrayList<JEntry> getEntries() {
+        return entries;
+    }
+
     // Used for Getting Journal Entries Recorded by the User from the Database
     public void read(final User user){
         database.collection(entriesPath).whereEqualTo("userID", user.getId()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

@@ -33,6 +33,13 @@ public class LocationManager extends RestService {
         }
     }
 
+    public ArrayList<City> getCities() {
+        return cities;
+    }
+    public ArrayList<Country> getCountries() {
+        return countries;
+    }
+
     // Used for Getting Countries from the Database
     public void readCountries(){
         database.collection(countriesPath).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

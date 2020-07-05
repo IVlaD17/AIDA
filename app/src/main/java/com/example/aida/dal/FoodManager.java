@@ -25,21 +25,8 @@ public class FoodManager extends RestService {
         }
     }
 
-    // Used for Generating a Food Object from a Database Document
-    private Food genFood(DocumentSnapshot document){
-        String id = document.getId();
-        String name = document.getData().get("name").toString();
-        String category = document.getData().get("category").toString();
-        float carbs = Float.valueOf(document.getData().get("carbohydrates").toString());
-        float sugars = Float.valueOf(document.getData().get("sugars").toString());
-        float fat = Float.valueOf(document.getData().get("fat").toString());
-        float saturates = Float.valueOf(document.getData().get("saturates").toString());
-        float energy = Float.valueOf(document.getData().get("energy").toString());
-        float fiber = Float.valueOf(document.getData().get("fiber").toString());
-        float protein = Float.valueOf(document.getData().get("protein").toString());
-        float salt = Float.valueOf(document.getData().get("salt").toString());
-
-        return new Food(id, name, category, carbs, sugars, fat, saturates, energy, fiber, protein, salt);
+    public ArrayList<Food> getFoods() {
+        return foods;
     }
 
     // Used for Getting Foods from the Database
@@ -58,5 +45,22 @@ public class FoodManager extends RestService {
                 }
             }
         });
+    }
+
+    // Used for Generating a Food Object from a Database Document
+    private Food genFood(DocumentSnapshot document){
+        String id = document.getId();
+        String name = document.getData().get("name").toString();
+        String category = document.getData().get("category").toString();
+        float carbs = Float.valueOf(document.getData().get("carbohydrates").toString());
+        float sugars = Float.valueOf(document.getData().get("sugars").toString());
+        float fat = Float.valueOf(document.getData().get("fat").toString());
+        float saturates = Float.valueOf(document.getData().get("saturates").toString());
+        float energy = Float.valueOf(document.getData().get("energy").toString());
+        float fiber = Float.valueOf(document.getData().get("fiber").toString());
+        float protein = Float.valueOf(document.getData().get("protein").toString());
+        float salt = Float.valueOf(document.getData().get("salt").toString());
+
+        return new Food(id, name, category, carbs, sugars, fat, saturates, energy, fiber, protein, salt);
     }
 }
