@@ -81,30 +81,33 @@ public class Calculator {
     }
 
     public boolean createMeal(Meal meal) {
-        if(meals.contains(meal)) {
-            return false;
-        } else {
-            meals.add(meal);
+        for(int mI = 0; mI < meals.size(); mI++) {
+            if(meal.getItem().getId().equals(meals.get(mI).getItem().getId())) {
+                return false;
+            }
         }
 
+        meals.add(meal);
         return true;
     }
     public boolean updateMeal(Meal meal) {
-        if(!meals.contains(meal)) {
-            return false;
-        } else {
-            meals.set(meals.indexOf(meal), meal);
+        for(int mI = 0; mI < meals.size(); mI++) {
+            if(meal.getItem().getId().equals(meals.get(mI).getItem().getId())) {
+                meals.set(mI, meal);
+                return true;
+            }
         }
 
-        return true;
+        return false;
     }
     public boolean deleteMeal(Meal meal) {
-        if(!meals.contains(meal)) {
-            return false;
-        } else {
-            meals.remove(meal);
+        for(int mI = 0; mI < meals.size(); mI++) {
+            if(meal.getItem().getId().equals(meals.get(mI).getItem().getId())) {
+                meals.remove(meal);
+                return true;
+            }
         }
 
-        return true;
+        return false;
     }
 }

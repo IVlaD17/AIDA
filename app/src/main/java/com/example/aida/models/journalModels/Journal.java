@@ -16,30 +16,33 @@ public class Journal {
     }
 
     public boolean createEntry(JEntry entry) {
-        if(entries.contains(entry)) {
-            return false;
-        } else {
-            entries.add(entry);
+        for(int eI = 0; eI < entries.size(); eI++) {
+            if(entry.getId().equals(entries.get(eI).getId())) {
+                return false;
+            }
         }
 
+        entries.add(entry);
         return true;
     }
     public boolean updateEntry(JEntry entry) {
-        if(!entries.contains(entry)) {
-            return false;
-        } else {
-            entries.set(entries.indexOf(entry), entry);
+        for(int eI = 0; eI < entries.size(); eI++) {
+            if(entry.getId().equals(entries.get(eI).getId())) {
+                entries.set(eI, entry);
+                return true;
+            }
         }
 
-        return true;
+        return false;
     }
     public boolean deleteEntry(JEntry entry) {
-        if(!entries.contains(entry)) {
-            return false;
-        } else {
-            entries.remove(entry);
+        for(int eI = 0; eI < entries.size(); eI++) {
+            if(entry.getId().equals(entries.get(eI).getId())) {
+                entries.remove(entry);
+                return true;
+            }
         }
 
-        return true;
+        return false;
     }
 }

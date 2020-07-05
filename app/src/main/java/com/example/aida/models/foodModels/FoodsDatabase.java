@@ -23,30 +23,33 @@ public class FoodsDatabase {
     }
 
     public boolean createFood(Food food) {
-        if(foods.contains(food)) {
-            return false;
-        } else {
-            foods.add(food);
+        for(int fI = 0; fI < foods.size(); fI++) {
+            if(food.getId().equals(foods.get(fI).getId())) {
+                return false;
+            }
         }
 
+        foods.add(food);
         return true;
     }
     public boolean updateFood(Food food) {
-        if(!foods.contains(food)) {
-            return false;
-        } else {
-            foods.set(foods.indexOf(food), food);
+        for(int fI = 0; fI < foods.size(); fI++) {
+            if(food.getId().equals(foods.get(fI).getId())) {
+                foods.set(fI, food);
+                return true;
+            }
         }
 
-        return true;
+        return false;
     }
     public boolean deleteFood(Food food) {
-        if(!foods.contains(food)) {
-            return false;
-        } else {
-            foods.remove(food);
+        for(int fI = 0; fI < foods.size(); fI++) {
+            if(food.getId().equals(foods.get(fI).getId())) {
+                foods.remove(food);
+                return true;
+            }
         }
 
-        return true;
+        return false;
     }
 }

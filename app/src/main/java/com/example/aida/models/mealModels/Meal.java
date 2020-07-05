@@ -10,13 +10,17 @@ public class Meal {
     // Default Constructor
     public Meal(){
         this.item = new Food();
-        this.quantity = 0;
+        this.quantity = 1;
     }
 
     // Generic Constructor
     public Meal(Food item, float quantity) {
         this.item = item;
-        this.quantity = quantity;
+        if(quantity <= 0) {
+            this.quantity = 1;
+        } else {
+            this.quantity = quantity;
+        }
     }
 
     public Food getItem() { return item; }
