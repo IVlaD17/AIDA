@@ -8,19 +8,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.aida.models.journalModels.JEntry;
 import com.example.aida.views.MainActivity;
 import com.example.aida.R;
-import com.example.aida.models.JournalEntry;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
 public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecyclerViewAdapter.JournalItemViewHolder> {
-    private ArrayList<JournalEntry> journalEntries;
+    private ArrayList<JEntry> journalEntries;
     private Context context;
 
-    public JournalRecyclerViewAdapter(ArrayList<JournalEntry> journalEntries, Context context){
+    public JournalRecyclerViewAdapter(ArrayList<JEntry> journalEntries, Context context){
         this.journalEntries = journalEntries;
         this.context = context;
     }
@@ -35,11 +35,11 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
 
     @Override
     public void onBindViewHolder(@NonNull JournalItemViewHolder holder, int position) {
-        final JournalEntry entry = journalEntries.get(position);
+        final JEntry entry = journalEntries.get(position);
         holder.cardTitle.setText(entry.getDate().toString());
         holder.cardSubtitle.setText(entry.getTime().toString());
-        holder.cardBodyLeft.setText(entry.leftColumn());
-        holder.cardBodyRight.setText(entry.rightColumn());
+        holder.cardBodyLeft.setText(entry.toString());
+        holder.cardBodyRight.setText(entry.toString());
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override

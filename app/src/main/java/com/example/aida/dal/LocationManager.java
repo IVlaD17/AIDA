@@ -2,8 +2,8 @@ package com.example.aida.dal;
 
 import androidx.annotation.NonNull;
 
-import com.example.aida.models.City;
-import com.example.aida.models.Country;
+import com.example.aida.models.userModels.City;
+import com.example.aida.models.userModels.Country;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -50,9 +50,8 @@ public class LocationManager extends RestService {
                     for(DocumentSnapshot document : documents){
                         String cityID = document.getId();
                         String cityName = document.getData().get("name").toString();
-                        String cityCountryID = document.getData().get("countryID").toString();
 
-                        City city = new City(cityID, cityName, cityCountryID);
+                        City city = new City(cityID, cityName, country);
 
                         country.getCities().add(city);
                     }

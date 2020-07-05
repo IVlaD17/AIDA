@@ -1,15 +1,15 @@
 package com.example.aida.utility;
 
-import com.example.aida.models.City;
-import com.example.aida.models.Country;
 import com.example.aida.models.dateTimeModels.VDate;
 import com.example.aida.models.dateTimeModels.VTime;
 import com.example.aida.models.foodModels.Food;
-import com.example.aida.models.JournalEntry;
+import com.example.aida.models.journalModels.JEntry;
 import com.example.aida.models.journalModels.Medication;
 import com.example.aida.models.journalModels.Activity;
 import com.example.aida.models.journalModels.Sleep;
-import com.example.aida.models.User;
+import com.example.aida.models.userModels.City;
+import com.example.aida.models.userModels.Country;
+import com.example.aida.models.userModels.User;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
@@ -72,7 +72,8 @@ public class Methods {
         String dbLastName = document.getData().get("lastName").toString();
         String dbTelephone = document.getData().get("telephone").toString();
 
-        return new User(dbID, dbEmail, dbPass, dbFirstName, dbLastName, dbTelephone, dbAddress, dbCountry, dbCity, dbDiabetesType, countries);
+        return new User();
+        //return new User(dbID, dbEmail, dbPass, dbFirstName, dbLastName, dbTelephone, dbAddress, dbCountry, dbCity, dbDiabetesType, countries);
     }
     public static Food convertDBDataToFoodItem(DocumentSnapshot document){
         String dbID = document.getId();
@@ -89,7 +90,7 @@ public class Methods {
 
         return new Food(dbID, dbName, dbCategory, dbCarbohydrates, dbSugars, dbFat, dbSaturates, dbEnergy, dbFiber, dbProtein, dbSalt);
     }
-    public static JournalEntry convertDBDataToJournalEntry(DocumentSnapshot document){
+    public static JEntry convertDBDataToJournalEntry(DocumentSnapshot document){
         String dbID = document.getId();
         int dbCarbohydrates = Integer.valueOf(document.getData().get("carbohydrates").toString());
         String dbDate = document.getData().get("date").toString();
@@ -120,6 +121,7 @@ public class Methods {
         Medication primaryMedication = new Medication(dbPrimaryMedicationName, dbPrimaryMedicationQuantity);
         Medication secondaryMedication = new Medication(dbSecondaryMedicationName, dbSecondaryMedicationQuantity);
 
-        return new JournalEntry(dbID, date, time, dbGlucose, dbCarbohydrates, primaryMedication, secondaryMedication, sleep, physicalActivity);
+        return new JEntry();
+        //return new JournalEntry(dbID, date, time, dbGlucose, dbCarbohydrates, primaryMedication, secondaryMedication, sleep, physicalActivity);
     }
 }

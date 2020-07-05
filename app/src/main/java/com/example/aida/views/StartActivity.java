@@ -12,10 +12,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.aida.R;
-import com.example.aida.models.City;
-import com.example.aida.models.Country;
 import com.example.aida.models.foodModels.Food;
-import com.example.aida.models.User;
+import com.example.aida.models.userModels.City;
+import com.example.aida.models.userModels.Country;
+import com.example.aida.models.userModels.User;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -110,8 +110,8 @@ public class StartActivity extends AppCompatActivity {
                                 String cityName = document.getData().get("name").toString();
                                 String cityCountryID = document.getData().get("countryID").toString();
 
-                                City newCity = new City(cityID, cityName, cityCountryID);
                                 Country owner = Methods.findCountryById(cityCountryID, countries);
+                                City newCity = new City(cityID, cityName, owner);
 
                                 if(owner != null) {
                                     owner.getCities().add(newCity);

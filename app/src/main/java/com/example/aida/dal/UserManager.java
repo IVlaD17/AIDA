@@ -2,7 +2,7 @@ package com.example.aida.dal;
 
 import androidx.annotation.NonNull;
 
-import com.example.aida.models.User;
+import com.example.aida.models.userModels.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -32,7 +32,7 @@ public class UserManager extends RestService {
         String diabetes = document.getData().get("diabetesType").toString();
 
         //TODO: Replace NULL Country and City with actual Values
-        return new User(id, email, password, firstName, lastName, telephone, address, null, null, diabetes);
+        return new User(id, firstName, lastName, diabetes, email, password, telephone, address, null, null);
     }
 
     // Used for Registration
@@ -44,7 +44,7 @@ public class UserManager extends RestService {
                     List<DocumentSnapshot> documents = task.getResult().getDocuments();
                     if (documents.size() == 0) {
                         // Successful Registration
-                        database.collection(usersPath).document().set(user.getDBFormat());
+                        database.collection(usersPath).document().set(user.toDBObject());
                         //TODO: Add Callback Method
                     } else {
                         // Email Already Registered
@@ -87,7 +87,7 @@ public class UserManager extends RestService {
 
     // Used for Account Editing
     public void update(User user) {
-        database.collection(usersPath).document(user.getId()).update(user.getDBFormat());
+        database.collection(usersPath).document(user.getId()).update(user.toDBObject());
     }
 
     // Used for Account Deletion

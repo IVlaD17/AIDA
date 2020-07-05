@@ -2,13 +2,13 @@ package com.example.aida.dal;
 
 import androidx.annotation.NonNull;
 
-import com.example.aida.models.journalModels.Activity;
-import com.example.aida.models.JournalEntry;
-import com.example.aida.models.journalModels.Medication;
-import com.example.aida.models.journalModels.Sleep;
-import com.example.aida.models.User;
 import com.example.aida.models.dateTimeModels.VDate;
 import com.example.aida.models.dateTimeModels.VTime;
+import com.example.aida.models.journalModels.Activity;
+import com.example.aida.models.journalModels.JEntry;
+import com.example.aida.models.journalModels.Medication;
+import com.example.aida.models.journalModels.Sleep;
+import com.example.aida.models.userModels.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,7 +22,7 @@ public class JournalManager extends RestService {
     //TODO: Add ViewModel Constructor
 
     // Used for Generating a JEntry Object from a Database Document
-    private JournalEntry genJEntry(DocumentSnapshot document){
+    private JEntry genJEntry(DocumentSnapshot document, String userID){
         String id = document.getId();
 
         VDate date = new VDate(document.getData().get("date").toString());
@@ -49,19 +49,19 @@ public class JournalManager extends RestService {
         float secondaryMedicationQuantity = Float.valueOf(document.getData().get("secondaryMedicationQuantity").toString());
         Medication secondaryMedication = new Medication(secondaryMedicationName, secondaryMedicationQuantity);
 
-        return new JournalEntry(id, date, time, glycaemia, carbs, primaryMedication, secondaryMedication, sleep, physicalActivity);
+        return new JEntry(id, userID, date, time, glycaemia, carbs, primaryMedication, secondaryMedication, sleep, physicalActivity);
     }
 
     // Used for Getting Journal Entries Recorded by the User from the Database
-    public void read(User user){
+    public void read(final User user){
         database.collection(entriesPath).whereEqualTo("userID", user.getId()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
-                    ArrayList<JournalEntry> entries = new ArrayList<>();
+                    ArrayList<JEntry> entries = new ArrayList<>();
                     List<DocumentSnapshot> documents = task.getResult().getDocuments();
                     for(DocumentSnapshot document : documents){
-                        JournalEntry newEntry = genJEntry(document);
+                        JEntry newEntry = genJEntry(document, user.getId());
                         entries.add(newEntry);
                     }
 
@@ -72,17 +72,17 @@ public class JournalManager extends RestService {
     }
 
     // Used for Adding a new Journal Entry in the Database
-    public void create(JournalEntry entry){
-        database.collection(entriesPath).document().set(entry.getDBFormat());
+    public void create(JEntry entry){
+        database.collection(entriesPath).document().set(entry.toDBOject());
     }
 
     // Used for Editing a Journal Entry in the Database
-    public void update(JournalEntry entry){
-        database.collection(entriesPath).document(entry.getId()).update(entry.getDBFormat());
+    public void update(JEntry entry){
+        database.collection(entriesPath).document(entry.getId()).update(entry.toDBOject());
     }
 
     // Used for Deleting a Journal Entry from the Database
-    public void delete(JournalEntry entry){
+    public void delete(JEntry entry){
         database.collection(entriesPath).document(entry.getId()).delete();
     }
 }

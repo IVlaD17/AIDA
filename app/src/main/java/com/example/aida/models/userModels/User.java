@@ -1,9 +1,10 @@
 package com.example.aida.models.userModels;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class User {
+public class User implements Serializable {
     // Meta Fields
     private String id;
 

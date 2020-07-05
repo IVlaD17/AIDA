@@ -16,9 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.aida.R;
-import com.example.aida.models.City;
-import com.example.aida.models.Country;
-import com.example.aida.models.User;
+import com.example.aida.models.userModels.City;
+import com.example.aida.models.userModels.Country;
+import com.example.aida.models.userModels.User;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
 import com.example.aida.viewModels.AccountManagementViewModel;
@@ -106,8 +106,8 @@ public class AccountManagement extends Fragment {
         final String email = emailInputField.getEditText().getText().toString();
         final String pass = passInputField.getEditText().getText().toString();
         final String cPass = cPassInputField.getEditText().getText().toString();
-        final String country = countryInputField.getEditText().getText().toString();
-        final String city = cityInputField.getEditText().getText().toString();
+        //final String country = countryInputField.getEditText().getText().toString();
+        //final String city = cityInputField.getEditText().getText().toString();
         final String address = addressInputField.getEditText().getText().toString();
         final String diabetes = diabetesInputField.getEditText().getText().toString();
 
@@ -125,7 +125,7 @@ public class AccountManagement extends Fragment {
 
         if(!Methods.isNullOrWhiteSpace(fName) && !Methods.isNullOrWhiteSpace(lName) && !Methods.isNullOrWhiteSpace(phone)
                 && !Methods.isNullOrWhiteSpace(email) && !Methods.isNullOrWhiteSpace(pass) && !Methods.isNullOrWhiteSpace(cPass)
-                && !Methods.isNullOrWhiteSpace(country) && !Methods.isNullOrWhiteSpace(city) && !Methods.isNullOrWhiteSpace(address)
+                && /*!Methods.isNullOrWhiteSpace(country) && !Methods.isNullOrWhiteSpace(city) &&*/ !Methods.isNullOrWhiteSpace(address)
                 && !Methods.isNullOrWhiteSpace(diabetes)){
             if(pass.equals(cPass)){
                 database.collection(Constants.USERS_PATH)
@@ -137,8 +137,10 @@ public class AccountManagement extends Fragment {
                                 if(task.isSuccessful()){
                                     List<DocumentSnapshot> documents = task.getResult().getDocuments();
                                     if(documents.size() == 0){
-                                        viewModel.setUser(new User("", email, pass, fName, lName, phone, address, country, city, diabetes, fCountries));
-                                        database.collection("users").document().set(viewModel.getUser().getDBFormat());
+                                        Country country = new Country();
+                                        City city = new City();
+                                        viewModel.setUser(new User("", fName, lName, diabetes, phone, email, pass, address, country, city));
+                                        database.collection("users").document().set(viewModel.getUser().toDBObject());
                                         attemptResult = Constants.MSG_ACC_CREATE_SUCCESS;
                                         Toast.makeText(getActivity().getApplicationContext(), attemptResult, Toast.LENGTH_SHORT).show();
 
@@ -208,9 +210,10 @@ public class AccountManagement extends Fragment {
                 && !Methods.isNullOrWhiteSpace(pass) && !Methods.isNullOrWhiteSpace(cPass) && !Methods.isNullOrWhiteSpace(newCountry)
                 && !Methods.isNullOrWhiteSpace(newCity) && !Methods.isNullOrWhiteSpace(newAddress) && !Methods.isNullOrWhiteSpace(newDiabetesType)) {
             if (pass.equals(cPass) && pass.equals(MainActivity.loggedUser.getPassword())) {
-                User user = new User(MainActivity.loggedUser.getId(), MainActivity.loggedUser.getEmailAddress(), pass, newFName, newLName, newPhone,
-                        newAddress, newCountry, newCity, newDiabetesType, countries);
-                database.collection(Constants.USERS_PATH).document(MainActivity.loggedUser.getId()).update(user.getDBFormat());
+                User user = new User();
+                //User user = new User(MainActivity.loggedUser.getId(), MainActivity.loggedUser.getEmailAddress(), pass, newFName, newLName, newPhone,
+                //        newAddress, newCountry, newCity, newDiabetesType, countries);
+                database.collection(Constants.USERS_PATH).document(MainActivity.loggedUser.getId()).update(user.toDBObject());
 
                 ((MainActivity)getActivity()).navigateToAccountViewScreen();
             }

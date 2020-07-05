@@ -147,22 +147,22 @@ public class JournalEditFragment extends Fragment {
         timeInputField.getEditText().setText(MainActivity.selectedEntry.getTime().toString());
 
         glucoseInputField = cRootView.findViewById(R.id.glucLvlTextInputEEF);
-        glucoseInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getGlucose()));
+        glucoseInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getGlycaemia()));
 
         carbsInputField = cRootView.findViewById(R.id.carbTextInputEEF);
-        carbsInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getCarbohydrates()));
+        carbsInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getCarbs()));
 
         primaryMedNameInputField = cRootView.findViewById(R.id.medPrimaryExposedDropdownMenuEEF);
-        primaryMedNameInputField.getEditText().setText(MainActivity.selectedEntry.getPrimaryMedication().getName());
+        primaryMedNameInputField.getEditText().setText(MainActivity.selectedEntry.getMedication1().getName());
 
         primaryMedQtyInputField = cRootView.findViewById(R.id.medPrimaryTextInputEEF);
-        primaryMedQtyInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getPrimaryMedication().getQuantity()));
+        primaryMedQtyInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getMedication1().getQuantity()));
 
         secondaryMedNameInputField = cRootView.findViewById(R.id.medSecondaryExposedDropdownMenuEEF);
-        secondaryMedNameInputField.getEditText().setText(MainActivity.selectedEntry.getSecondaryMedication().getName());
+        secondaryMedNameInputField.getEditText().setText(MainActivity.selectedEntry.getMedication2().getName());
 
         secondaryMedQtyInputField = cRootView.findViewById(R.id.medSecondaryTextInputEEF);
-        secondaryMedQtyInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getSecondaryMedication().getQuantity()));
+        secondaryMedQtyInputField.getEditText().setText(String.valueOf(MainActivity.selectedEntry.getMedication2().getQuantity()));
 
         sleepStartInputField = cRootView.findViewById(R.id.sleepSTTextInputEEF);
         sleepStartInputField.getEditText().setText(MainActivity.selectedEntry.getSleep().getStart().toString());
@@ -171,20 +171,20 @@ public class JournalEditFragment extends Fragment {
         sleepEndInputField.getEditText().setText(MainActivity.selectedEntry.getSleep().getEnd().toString());
 
         activityTypeInputField = cRootView.findViewById(R.id.physActExposedDropdownMenuEEF);
-        activityTypeInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getType().toString());
+        activityTypeInputField.getEditText().setText(MainActivity.selectedEntry.getActivity().getType().toString());
 
         activityStartInputField = cRootView.findViewById(R.id.physActSTTextInputEEF);
-        activityStartInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getStart().toString());
+        activityStartInputField.getEditText().setText(MainActivity.selectedEntry.getActivity().getStart().toString());
 
         activityEndInputField = cRootView.findViewById(R.id.physActETTextInputEEF);
-        activityEndInputField.getEditText().setText(MainActivity.selectedEntry.getPhysicalActivity().getEnd().toString());
+        activityEndInputField.getEditText().setText(MainActivity.selectedEntry.getActivity().getEnd().toString());
 
         if(MainActivity.selectedEntry.getSleep().getHasSlept()){
             sleepStartInputField.setVisibility(View.VISIBLE);
             sleepEndInputField.setVisibility(View.VISIBLE);
         }
 
-        if(MainActivity.selectedEntry.getPhysicalActivity().getType() != ActivityTypes.NONE){
+        if(MainActivity.selectedEntry.getActivity().getType() != ActivityTypes.NONE){
             activityStartInputField.setVisibility(View.VISIBLE);
             activityEndInputField.setVisibility(View.VISIBLE);
         }

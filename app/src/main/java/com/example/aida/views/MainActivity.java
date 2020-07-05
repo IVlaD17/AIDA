@@ -18,17 +18,17 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aida.R;
-import com.example.aida.models.journalModels.Activity;
-import com.example.aida.models.Country;
-import com.example.aida.models.foodModels.Food;
-import com.example.aida.models.JournalEntry;
-import com.example.aida.models.mealModels.Meal;
-import com.example.aida.models.journalModels.Medication;
-import com.example.aida.models.journalModels.Sleep;
-import com.example.aida.models.User;
-import com.example.aida.utility.Constants;
 import com.example.aida.models.dateTimeModels.VDate;
 import com.example.aida.models.dateTimeModels.VTime;
+import com.example.aida.models.foodModels.Food;
+import com.example.aida.models.journalModels.Activity;
+import com.example.aida.models.journalModels.JEntry;
+import com.example.aida.models.journalModels.Medication;
+import com.example.aida.models.journalModels.Sleep;
+import com.example.aida.models.mealModels.Meal;
+import com.example.aida.models.userModels.Country;
+import com.example.aida.models.userModels.User;
+import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
 import com.example.aida.viewAdapters.JournalRecyclerViewAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
     public static FirebaseFirestore database;
 
     public static User loggedUser;
-    public static JournalEntry selectedEntry;
+    public static JEntry selectedEntry;
 
     public static ArrayList<Country> countries;
 
-    public static ArrayList<JournalEntry> journalEntries;
+    public static ArrayList<JEntry> journalEntries;
     public static ArrayList<Food> foodItems;
     public static ArrayList<Meal> mealEntries;
 
@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
                             journalEntries.clear();
                             List<DocumentSnapshot> documents = task.getResult().getDocuments();
                             for(DocumentSnapshot document : documents){
-                                JournalEntry newEntry = Methods.convertDBDataToJournalEntry(document);
-                                journalEntries.add(newEntry);
+                                //JournalEntry newEntry = Methods.convertDBDataToJournalEntry(document);
+                                //journalEntries.add(newEntry);
                             }
                             adapter.notifyDataSetChanged();
                         }
@@ -470,10 +470,10 @@ public class MainActivity extends AppCompatActivity {
             Sleep sleep = new Sleep(hasSlept, sleepStart, sleepEnd);
             Activity physicalActivity = new Activity(activityType, activityStart, activityEnd);
 
-            JournalEntry entry = new JournalEntry("", date, time, glucoseLevel, carbsAmount,
+            JEntry entry = new JEntry("", loggedUser.getId(), date, time, glucoseLevel, carbsAmount,
                     primaryMedication, secondaryMedication, sleep, physicalActivity);
 
-            database.collection(Constants.ENTRIES_PATH).document().set(entry.getDBFormat());
+            database.collection(Constants.ENTRIES_PATH).document().set(entry.toDBOject());
             navController.navigate(R.id.navigation_journal_view);
         }
         else{
@@ -485,7 +485,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView journalView = findViewById(R.id.recyclerViewJVF);
         int entryPosition = journalView.getChildAdapterPosition(cardLayout);
 
-        JournalEntry entry = journalEntries.get(entryPosition);
+        JEntry entry = journalEntries.get(entryPosition);
         database.collection(Constants.ENTRIES_PATH).document(entry.getId()).delete();
         journalEntries.remove(entryPosition);
         JournalViewFragment.getMealRecyclerViewAdapter().notifyDataSetChanged();
@@ -561,9 +561,9 @@ public class MainActivity extends AppCompatActivity {
             Sleep sleep = new Sleep(hasSlept, sleepStart, sleepEnd);
             Activity physicalActivity = new Activity(activityType, activityStart, activityEnd);
 
-            JournalEntry entry = new JournalEntry(selectedEntry.getId(), date, time, glucoseLevel, carbsAmount,
+            JEntry entry = new JEntry(selectedEntry.getId(), selectedEntry.getUserID(), date, time, glucoseLevel, carbsAmount,
                     primaryMedication, secondaryMedication, sleep, physicalActivity);
-            database.collection(Constants.ENTRIES_PATH).document(selectedEntry.getId()).update(entry.getDBFormat());
+            database.collection(Constants.ENTRIES_PATH).document(selectedEntry.getId()).update(entry.toDBOject());
             navController.navigate(R.id.navigation_journal_view);
         }
         else{
