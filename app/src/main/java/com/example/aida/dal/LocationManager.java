@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.example.aida.models.userModels.City;
 import com.example.aida.models.userModels.Country;
+import com.example.aida.viewModels.ViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -13,8 +14,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LocationManager extends RestService {
-    //TODO: Add Data Repository
-    //TODO: Add ViewModel Constructor
+    private ArrayList<City> cities;
+    private ArrayList<Country> countries;
+
+    public LocationManager(ViewModel viewModel, ArrayList<City> cities, ArrayList<Country> countries) {
+        super(viewModel);
+
+        if(cities == null) {
+            this.cities = new ArrayList<>();
+        } else {
+            this.cities = cities;
+        }
+
+        if(countries == null) {
+            this.countries = new ArrayList<>();
+        } else {
+            this.countries = countries;
+        }
+    }
 
     // Used for Getting Countries from the Database
     public void readCountries(){

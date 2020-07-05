@@ -3,16 +3,27 @@ package com.example.aida.dal;
 import androidx.annotation.NonNull;
 
 import com.example.aida.models.userModels.User;
+import com.example.aida.viewModels.ViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager extends RestService {
-    //TODO: Add Data Repository
-    //TODO: Add ViewModel Constructor
+    private ArrayList<User> users;
+
+    public UserManager(ViewModel viewModel, ArrayList<User> users) {
+        super(viewModel);
+
+        if(users == null) {
+            this.users = new ArrayList<>();
+        } else {
+            this.users = users;
+        }
+    }
 
     // Used for Generating a Food Object from a Database Document
     private User genUser(DocumentSnapshot document){
