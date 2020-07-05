@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LocationManager extends RestService {
+    //TODO: Add Data Repository
     //TODO: Add ViewModel Constructor
 
     // Used for Getting Countries from the Database

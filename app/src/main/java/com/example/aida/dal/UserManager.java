@@ -11,6 +11,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 public class UserManager extends RestService {
+    //TODO: Add Data Repository
     //TODO: Add ViewModel Constructor
 
     // Used for Generating a Food Object from a Database Document
