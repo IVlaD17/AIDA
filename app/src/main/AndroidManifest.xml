@@ -9,6 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme.DayNight">
+        <activity android:name=".views.MenuActivity"></activity>
+        <activity android:name=".views.FoodsDatabaseActivity" />
+        <activity android:name=".views.MealManageActivity" />
+        <activity android:name=".views.CalculatorActivity" />
+        <activity android:name=".views.ProfileEditActivity" />
+        <activity android:name=".views.ProfileActivity" />
+        <activity android:name=".views.JournalManageActivity" />
+        <activity android:name=".views.JournalActivity" />
+        <activity android:name=".views.RegisterActivity" />
+        <activity android:name=".views.LoginActivity" />
         <activity android:name=".views.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.MainActivity"></activity>
+        <activity android:name=".views.MainActivity" />
     </application>
 
 </manifest>
