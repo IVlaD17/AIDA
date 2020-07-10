@@ -9,14 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.aida.R;
 import com.example.aida.viewModels.MealViewModel;
 
-public class MealManageActivity extends AppCompatActivity {
+public class CalculatorManageActivity extends AppCompatActivity {
 
     private MealViewModel mealViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meal_manage);
+        setContentView(R.layout.activity_calculator_manage);
     }
 
     @Override

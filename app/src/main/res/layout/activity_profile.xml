@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- TODO: Implement View -->
-
+<!-- TODO: Add Top Bar -->
+<!-- TODO: Add Navigation Bar -->
+<!-- TODO: Implement ViewModel Bindings-->
+<!-- TODO: Refine Appearance -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,4 +12,152 @@
     android:layout_height="match_parent"
     tools:context=".views.ProfileActivity">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cntAccountPA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/keyline_1">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgAvatarPA"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:layout_marginStart="@dimen/keyline_4"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/sample_avatar"
+                app:tint="?colorSurface"
+                app:tintMode="multiply"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDetailsTogglePA"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/keyline_2"
+                android:layout_marginStart="@dimen/keyline_4"
+                android:layout_marginEnd="@dimen/keyline_0"
+                app:icon='@drawable/ic_expand_less'
+                app:iconPadding="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/lblNamePA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_2"
+                android:layout_marginStart="@dimen/keyline_4"
+                android:text="@string/profile_title"
+                android:textAppearance="?textAppearanceHeadline6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgAvatarPA" />
+            <TextView
+                android:id="@+id/lblDiabetesPA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_1"
+                android:layout_marginStart="@dimen/keyline_4"
+                android:text="@string/profile_subtitle"
+                android:textAppearance="?textAppearanceSubtitle1"
+                app:layout_constraintTop_toBottomOf="@+id/lblNamePA"
+                app:layout_constraintStart_toEndOf="@id/imgAvatarPA" />
+            <TextView
+                android:id="@+id/lblAddressPA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_2"
+                android:layout_marginStart="@dimen/keyline_4"
+                android:layout_marginEnd="@dimen/keyline_4"
+                android:text="@string/profile_body"
+                android:textAppearance="?textAppearanceBody2"
+                android:maxLines="20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblDiabetesPA" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:id="@+id/btnEditPA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_account_edit"
+                android:layout_marginTop="@dimen/keyline_0"
+                android:layout_marginStart="@dimen/keyline_2"
+                android:layout_marginEnd="@dimen/keyline_0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblAddressPA"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:id="@+id/btnDeletePA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_account_delete"
+                android:layout_marginTop="@dimen/keyline_0"
+                android:layout_marginStart="@dimen/keyline_0"
+                android:layout_marginEnd="@dimen/keyline_2"
+                app:layout_constraintTop_toBottomOf="@id/lblAddressPA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lblEmailPA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_email_entry"
+        app:startIconDrawable="@drawable/ic_favorite_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cntAccountPA">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_email"
+            android:inputType="none"
+            android:editable="false"
+            android:focusable="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lblPhonePA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_telephone_entry"
+        app:startIconDrawable="@drawable/ic_favorite_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblEmailPA">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_phone"
+            android:inputType="none"
+            android:editable="false"
+            android:focusable="false" />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

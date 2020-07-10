@@ -65,6 +65,22 @@ public class JEntryViewModel implements ViewModel {
         //TODO: Implement Method
     }
 
+    public void onBasicToggleBtnTapped() {
+        //TODO: Implement Method
+    }
+
+    public void onMedicationToggleBtnTapped() {
+        //TODO: Implement Method
+    }
+
+    public void onSleepToggleBtnTapped() {
+        //TODO: Implement Method
+    }
+
+    public void onActivityToggleBtnTapped() {
+        //TODO: Implement Method
+    }
+
     public void onEDateFieldTapped() {
         //TODO: Implement Method
     }
@@ -121,6 +137,22 @@ public class JEntryViewModel implements ViewModel {
         //TODO: Implement Method
     }
 
+    private void toggleBasicFields() {
+        //TODO: Implement Method
+    }
+
+    private void toggleMedicationFields() {
+        //TODO: Implement Method
+    }
+
+    private void toggleSleepFields() {
+        //TODO: Implement Method
+    }
+
+    private void toggleActivityFields() {
+        //TODO: Implement Method
+    }
+
     private void toggleTimePicker() {
         //TODO: Implement Method
     }
@@ -133,11 +165,11 @@ public class JEntryViewModel implements ViewModel {
         //TODO: Implement Method
     }
 
-    private void toggleSleepFields() {
+    private void toggleSleepTimeFields() {
         //TODO: Implement Method
     }
 
-    private void toggleActivityFields() {
+    private void toggleActivityActivityFields() {
         //TODO: Implement Method
     }
 

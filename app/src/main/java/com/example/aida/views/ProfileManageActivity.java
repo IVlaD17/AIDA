@@ -9,14 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.aida.R;
 import com.example.aida.viewModels.UserManageViewModel;
 
-public class RegisterActivity extends AppCompatActivity {
+public class ProfileManageActivity extends AppCompatActivity {
 
     protected UserManageViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_profile_manage);
     }
 
     @Override

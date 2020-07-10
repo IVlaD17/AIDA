@@ -57,7 +57,11 @@ public class UserManageViewModel extends UserViewModel {
         //TODO: Implement Method
     }
 
-    public void onCountryToggleBtnTapped() {
+    public void onAccountToggleBtnTapped() {
+        //TODO: Implement Method
+    }
+
+    public void onCountryDropdownChanged() {
         //TODO: Implement Method
     }
 
@@ -82,6 +86,10 @@ public class UserManageViewModel extends UserViewModel {
     }
 
     private void toggleAddressFields() {
+        //TODO: Implement Method
+    }
+
+    private void toggleAccountFields() {
         //TODO: Implement Method
     }
 

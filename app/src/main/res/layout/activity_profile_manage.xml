@@ -9,22 +9,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.JournalManageActivity">
+    tools:context=".views.ProfileManageActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnLoginPMA"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cntBasicJMA"
+                android:id="@+id/cntPersonalPMA"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
@@ -37,20 +37,20 @@
                 app:layout_constraintVertical_chainStyle="packed">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/lblBasicJMA"
+                    android:id="@+id/lblPersonalPMA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_basic"
+                    android:text="@string/lbl_pm_personal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnBasicJMA"
+                    android:id="@+id/btnPersonalPMA"
                     style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -69,97 +69,73 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lblBasicJMA"
+                    app:layout_constraintTop_toBottomOf="@id/lblPersonalPMA"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtJEntryDateJMA"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="@string/hint_rec_date_entry"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cntBasicJMA"
-                app:startIconDrawable="@drawable/ic_favorite_icon">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtJEntryTimeJMA"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="@string/hint_rec_time_entry"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtJEntryDateJMA"
-                app:startIconDrawable="@drawable/ic_favorite_icon">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtGlycaemiaJMA"
+                android:id="@+id/txtFNamePMA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="@string/hint_gluc_lvl_entry"
+                android:hint="@string/hint_name_f_entry"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtJEntryTimeJMA"
+                app:layout_constraintTop_toBottomOf="@id/cntPersonalPMA"
                 app:startIconDrawable="@drawable/ic_favorite_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtCarbohydratesJMA"
+                android:id="@+id/txtLNamePMA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="@string/hint_carb_entry"
+                android:hint="@string/hint_name_l_entry"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtGlycaemiaJMA"
+                app:layout_constraintTop_toBottomOf="@+id/txtFNamePMA"
                 app:startIconDrawable="@drawable/ic_favorite_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:id="@+id/lstDiabetesTypesPMA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="@string/lst_diabetes"
+                app:startIconDrawable="@drawable/ic_favorite_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtLNamePMA">
+
+                <AutoCompleteTextView
+                    android:id="@+id/lstDiabetesTypePMA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cntMedicationJMA"
+                android:id="@+id/cntContactPMA"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
@@ -168,23 +144,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtCarbohydratesJMA">
+                app:layout_constraintTop_toBottomOf="@id/lstDiabetesTypesPMA">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/lblMedicationJMA"
+                    android:id="@+id/lblContactPMA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_medic"
+                    android:text="@string/lbl_pm_contact"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnMedicationJMA"
+                    android:id="@+id/btnContactPMA"
                     style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -203,43 +179,23 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lblMedicationJMA"
+                    app:layout_constraintTop_toBottomOf="@id/lblContactPMA"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lstMedication1TypesJMA"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="@string/hint_medication_entry"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cntMedicationJMA"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="6"
-                app:startIconDrawable="@drawable/ic_favorite_icon">
-
-                <AutoCompleteTextView
-                    android:id="@+id/lstMedication1TypeJMA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtMedication1QtyJMA"
-                android:layout_width="0dp"
+                android:id="@+id/txtPhonePMA"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="@string/hint_med_amount_entry"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lstMedication1TypesJMA"
+                android:hint="@string/hint_telephone_entry"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cntContactPMA"
                 app:startIconDrawable="@drawable/ic_favorite_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -249,70 +205,52 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lstMedication2TypesJMA"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                android:layout_width="0dp"
+                android:id="@+id/txtEmailPMA"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="@string/hint_medication_entry"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtMedication1QtyJMA"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/hint_email_entry"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="6"
-                app:startIconDrawable="@drawable/ic_favorite_icon">
-
-                <AutoCompleteTextView
-                    android:id="@+id/lstMedication2TypeJMA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtMedication2QtyJMA"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="@string/hint_med_amount_entry"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lstMedication2TypesJMA"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintTop_toBottomOf="@+id/txtPhonePMA"
                 app:startIconDrawable="@drawable/ic_favorite_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cntSleepJMA"
+                android:id="@+id/cntAccountPMA"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtMedication2QtyJMA">
+                app:layout_constraintTop_toBottomOf="@id/txtEmailPMA">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/lblSleepJMA"
+                    android:id="@+id/lblAccountPMA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_sleep"
+                    android:text="@string/lbl_pm_account"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSleepJMA"
+                    android:id="@+id/btnAccountPMA"
                     style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -331,97 +269,80 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lblSleepJMA"
+                    app:layout_constraintTop_toBottomOf="@id/lblAccountPMA"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/swtSleepJMA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:checked="false"
-                android:text="@string/swt_previous_sleep"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cntSleepJMA" />
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtSleepStartJMA"
-                android:layout_width="0dp"
+                android:id="@+id/txtPassPMA"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="@string/hint_sleep_st_entry"
+                android:hint="@string/hint_pass_entry"
+                app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/swtSleepJMA"
+                app:layout_constraintTop_toBottomOf="@+id/cntAccountPMA"
                 app:startIconDrawable="@drawable/ic_favorite_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:inputType="none" />
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtSleepEndJMA"
-                android:layout_width="0dp"
+                android:id="@+id/txtCPassPMA"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="@string/hint_sleep_en_entry"
+                android:hint="@string/hint_pass_con_entry"
+                app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtSleepStartJMA"
+                app:layout_constraintTop_toBottomOf="@+id/txtPassPMA"
                 app:startIconDrawable="@drawable/ic_favorite_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:inputType="none" />
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cntActivityJMA"
+                android:id="@+id/cntAddressPMA"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtSleepEndJMA">
+                app:layout_constraintTop_toBottomOf="@id/txtCPassPMA">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/lblActivityJMA"
+                    android:id="@+id/lblAddressPMA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_activ"
+                    android:text="@string/lbl_pm_address"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnActivityJMA"
+                    android:id="@+id/btnAddressPMA"
                     style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -440,87 +361,99 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lblActivityJMA"
+                    app:layout_constraintTop_toBottomOf="@id/lblAddressPMA"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lstActivityTypesJMA"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:id="@+id/lstCountriesPMA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:hint="@string/lst_physical_activities"
+                android:hint="@string/lst_countries"
+                app:startIconDrawable="@drawable/ic_favorite_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cntActivityJMA"
-                app:startIconDrawable="@drawable/ic_favorite_icon">
+                app:layout_constraintTop_toBottomOf="@+id/cntAddressPMA">
 
                 <AutoCompleteTextView
-                    android:id="@+id/lstActivityTypeJMA"
+                    android:id="@+id/lstCountryPMA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:editable="false" />
+                    android:editable="false"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtActivityStartJMA"
-                android:layout_width="0dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:id="@+id/lstCitiesPMA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="@string/lst_cities"
+                app:startIconDrawable="@drawable/ic_favorite_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lstCountriesPMA">
+
+                <AutoCompleteTextView
+                    android:id="@+id/lstCityPMA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtAddressPMA"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="@string/hint_phys_act_st_entry"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lstActivityTypesJMA"
+                android:hint="@string/hint_address_entry"
+                app:startIconDrawable="@drawable/ic_favorite_icon"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:startIconDrawable="@drawable/ic_favorite_icon">
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lstCitiesPMA">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtActivityEndJMA"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="@string/hint_phys_act_en_entry"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtActivityStartJMA"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:startIconDrawable="@drawable/ic_favorite_icon">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:inputType="none" />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnJEntrySaveJMA"
+                android:id="@+id/btnActionPMA"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="@string/btn_jentry_save"
+                android:text="@string/btn_account_create"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtActivityEndJMA" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddressPMA" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLoginPMA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/btn_nav_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.MaterialComponents.Button.TextButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

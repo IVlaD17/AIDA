@@ -33,4 +33,11 @@
 
     <style name="MyTheme.DayNight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Dividers -->
+    <style name="MyTheme.DayNight.Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/color_secondary_variant</item>
+    </style>
+
 </resources>

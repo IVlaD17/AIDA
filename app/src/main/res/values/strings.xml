@@ -52,8 +52,27 @@
     <string name="hint_sleep_en_entry">Sleep End</string>
     <string name="hint_telephone_entry">Telephone Number</string>
 
+    <!-- Label Texts -->
+    <string name="lbl_pm_personal">Personal Information</string>
+    <string name="lbl_pm_contact">Contact Details</string>
+    <string name="lbl_pm_account">Account Settings</string>
+    <string name="lbl_pm_address">Address</string>
+
+    <string name="lbl_jm_basic">Basic Information</string>
+    <string name="lbl_jm_medic">Medication Taken</string>
+    <string name="lbl_jm_sleep">Sleep Schedule</string>
+    <string name="lbl_jm_activ">Other Activities</string>
+
+    <string name="lbl_ma_profile">My Profile</string>
+    <string name="lbl_ma_journal">My Journal</string>
+    <string name="lbl_ma_planner">Nutritional Calculator</string>
+    <string name="lbl_ma_other">Other</string>
+
+    <string name="lbl_mma_categories">Food Category</string>
+    <string name="lbl_mma_food_item">Food Item</string>
+    <string name="lbl_mma_quantity">Quantity</string>
+
     <!-- Button Texts -->
-    <string name="btn_account_create">Register</string>
     <string name="btn_account_delete">Delete Account</string>
     <string name="btn_account_edit">Edit Account</string>
     <string name="btn_close">Close</string>
@@ -70,6 +89,31 @@
     <string name="btn_food_save">Save</string>
     <string name="btn_login">Login</string>
     <string name="btn_register">Register</string>
+
+    <string name="btn_account_create">Register</string>
+    <string name="btn_account_save">Save Changes</string>
+    <string name="btn_jentry_save">Save Entry</string>
+    <string name="btn_jentry_add">Add Entry</string>
+
+    <string name="btn_nav_registration">Create a new account</string>
+    <string name="btn_nav_login">Already have an account?</string>
+
+    <string name="btn_ca_add_item">Add Item</string>
+
+    <string name="btn_ma_profile_view">View my profile</string>
+    <string name="btn_ma_profile_edit">Edit my profile</string>
+    <string name="btn_ma_journal_view">View my journal</string>
+    <string name="btn_ma_journal_add">Create a new journal entry</string>
+    <string name="btn_ma_meal_view">View my planned meal</string>
+    <string name="btn_ma_meal_add">Add a new meal item</string>
+    <string name="btn_ma_foods_view">Explore the Foods Database</string>
+    <string name="btn_ma_logout">Logout</string>
+
+    <string name="btn_mma_save_item">Save Item</string>
+
+    <string name="btn_ncl_default_action">Action</string>
+    <string name="btn_ncl_add_to_meal">Add To Meal</string>
+    <string name="btn_ncl_remove_item">Remove Item</string>
 
     <!-- Selection Control Labels -->
     <string name="chk_auto_login">Login Automatically</string>
@@ -92,12 +136,12 @@
     <!-- Entry Template -->
     <string name="entry_title">07/01/2020 Entry</string>
     <string name="entry_subtitle">07:07</string>
-    <string name="entry_body">Glucose Level: 125 \nCarbohydrates: 90 \nHumalog Insulin: 15 Units \nLantus Insulin: 0 Units \nSleep: None \nBasketball: 10:00 - 12:00</string>
+    <string name="entry_body">Glucose Level: 125mg/dl \nCarbohydrates: 90 \nHumalog Insulin: 15 Units \nLantus Insulin: 0 Units \nSleep: None \nBasketball: 10:00 – 12:00</string>
 
     <!-- Food Template -->
-    <string name="food_title">Pizza</string>
+    <string name="food_title">Pizza - 100g</string>
     <string name="food_subtitle">Fast Food</string>
-    <string name="food_body">Carbohydrates: 100 of which sugars: 100 \nFat: 100 of which saturates: 100 \nEnergy: 100 Fibre: 100 \nProtein: 100 Salt: 100</string>
+    <string name="food_body">Carbohydrates: 100g \nof which sugars: 100g \nFat: 100g \nof which saturates: 100g \nEnergy: 100kcal \nFibre: 100g \nProtein: 100g \nSalt: 100g</string>
 
     <!-- Profile Template -->
     <string name="profile_title">Vlad Ionica</string>
