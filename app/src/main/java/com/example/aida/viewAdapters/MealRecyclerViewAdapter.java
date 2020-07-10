@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.aida.views.MainActivity;
+import com.example.aida.views.legacy.MainActivity;
 import com.example.aida.R;
 import com.example.aida.models.foodModels.Food;
 import com.example.aida.models.foodModels.FoodCategories;

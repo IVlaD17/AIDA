@@ -1,4 +1,4 @@
-package com.example.aida.views;
+package com.example.aida.views.legacy;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,7 +21,7 @@ import com.example.aida.models.userModels.Country;
 import com.example.aida.models.userModels.User;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
-import com.example.aida.viewModels.AccountManagementViewModel;
+import com.example.aida.viewModels.legacy.AccountManagementViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;

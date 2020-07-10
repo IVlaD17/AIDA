@@ -7,55 +7,55 @@
 
     <fragment
         android:id="@+id/navigation_account_create"
-        android:name="com.example.aida.views.RegisterFragment"
+        android:name="com.example.aida.views.legacy.AccountManagement"
         android:label="@string/title_acc_create"
-        tools:layout="@layout/fragment_register"/>
+        tools:layout="@layout/fragment_account_management"/>
 
     <fragment
         android:id="@+id/navigation_account_edit"
-        android:name="com.example.aida.views.AccountEditFragment"
+        android:name="com.example.aida.views.legacy.AccountManagement"
         android:label="@string/title_acc_edit"
         tools:layout="@layout/fragment_account_management"/>
 
     <fragment
         android:id="@+id/navigation_account_view"
-        android:name="com.example.aida.views.AccountViewFragment"
+        android:name="com.example.aida.views.legacy.AccountViewFragment"
         android:label="@string/title_acc_view"
         tools:layout="@layout/fragment_account_view"/>
 
     <fragment
         android:id="@+id/navigation_foods_view"
-        android:name="com.example.aida.views.FoodsViewFragment"
+        android:name="com.example.aida.views.legacy.FoodsViewFragment"
         android:label="@string/title_foods"
         tools:layout="@layout/fragment_foods_view"/>
 
     <fragment
         android:id="@+id/navigation_journal_add_entry"
-        android:name="com.example.aida.views.JournalAddFragment"
+        android:name="com.example.aida.views.legacy.JournalAddFragment"
         android:label="@string/title_journal_entry_add"
         tools:layout="@layout/fragment_journal_add"/>
 
     <fragment
         android:id="@+id/navigation_journal_edit_entry"
-        android:name="com.example.aida.views.JournalEditFragment"
+        android:name="com.example.aida.views.legacy.JournalEditFragment"
         android:label="@string/title_journal_entry_edit"
         tools:layout="@layout/fragment_journal_edit"/>
 
     <fragment
         android:id="@+id/navigation_journal_view"
-        android:name="com.example.aida.views.JournalViewFragment"
+        android:name="com.example.aida.views.legacy.JournalViewFragment"
         android:label="@string/title_journal_view"
         tools:layout="@layout/fragment_journal_view"/>
 
     <fragment
         android:id="@+id/navigation_login"
-        android:name="com.example.aida.views.LoginFragment"
+        android:name="com.example.aida.views.legacy.LoginFragment"
         android:label="@string/title_meal"
         tools:layout="@layout/fragment_login"/>
 
     <fragment
         android:id="@+id/navigation_meal_calculator"
-        android:name="com.example.aida.views.MealCalculatorFragment"
+        android:name="com.example.aida.views.legacy.MealCalculatorFragment"
         android:label="@string/title_meal"
         tools:layout="@layout/fragment_meal_calculator"/>
 </navigation>

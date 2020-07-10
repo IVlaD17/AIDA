@@ -1,4 +1,4 @@
-package com.example.aida.views;
+package com.example.aida.views.legacy;
 
 import android.os.Bundle;
 import android.view.View;

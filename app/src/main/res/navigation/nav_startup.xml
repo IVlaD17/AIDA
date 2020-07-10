@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_login"
-        android:name="com.example.aida.views.LoginFragment"
+        android:name="com.example.aida.views.legacy.LoginFragment"
         android:label="@string/title_login"
         tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/navigation_register"
-        android:name="com.example.aida.views.RegisterFragment"
+        android:name="com.example.aida.views.legacy.AccountManagement"
         android:label="@string/title_acc_create"
         tools:layout="@layout/fragment_account_management" />
 </navigation>

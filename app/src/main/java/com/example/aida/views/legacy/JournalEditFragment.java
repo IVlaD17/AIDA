@@ -1,4 +1,4 @@
-package com.example.aida.views;
+package com.example.aida.views.legacy;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -18,7 +18,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.aida.R;
 import com.example.aida.models.journalModels.ActivityTypes;
 import com.example.aida.utility.Constants;
-import com.example.aida.viewModels.JournalEditViewModel;
+import com.example.aida.viewModels.legacy.JournalEditViewModel;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputLayout;
 

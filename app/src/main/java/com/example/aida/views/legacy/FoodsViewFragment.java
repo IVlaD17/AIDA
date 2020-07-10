@@ -1,4 +1,4 @@
-package com.example.aida.views;
+package com.example.aida.views.legacy;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.aida.R;
-import com.example.aida.viewModels.FoodsViewViewModel;
+import com.example.aida.viewModels.legacy.FoodsViewViewModel;
 import com.example.aida.viewAdapters.FoodsRecyclerViewAdapter;
 
 public class FoodsViewFragment extends Fragment {

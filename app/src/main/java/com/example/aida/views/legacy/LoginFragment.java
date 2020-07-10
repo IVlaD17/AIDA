@@ -1,4 +1,4 @@
-package com.example.aida.views;
+package com.example.aida.views.legacy;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.example.aida.R;
 import com.example.aida.utility.Constants;
 import com.example.aida.utility.Methods;
-import com.example.aida.viewModels.LoginViewModel;
+import com.example.aida.viewModels.legacy.LoginViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -27,8 +27,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
-import static com.example.aida.views.MainActivity.database;
-import static com.example.aida.views.StartActivity.countries;
+import static com.example.aida.views.legacy.MainActivity.database;
+import static com.example.aida.views.legacy.StartActivity.countries;
 
 public class LoginFragment extends Fragment {
 

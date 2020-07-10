@@ -1,4 +1,4 @@
-package com.example.aida.views;
+package com.example.aida.views.legacy;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -18,7 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 import com.example.aida.R;
-import com.example.aida.viewModels.JournalAddViewModel;
+import com.example.aida.viewModels.legacy.JournalAddViewModel;
 import com.example.aida.utility.Constants;
 import com.google.android.material.textfield.TextInputLayout;
 

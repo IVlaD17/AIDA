@@ -1,20 +1,18 @@
-package com.example.aida.views;
-
-import androidx.lifecycle.ViewModelProviders;
+package com.example.aida.views.legacy;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.example.aida.R;
-import com.example.aida.viewModels.AccountViewViewModel;
+import com.example.aida.viewModels.legacy.AccountViewViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class AccountViewFragment extends Fragment {

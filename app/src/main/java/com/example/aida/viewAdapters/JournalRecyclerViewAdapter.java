@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aida.models.journalModels.JEntry;
-import com.example.aida.views.MainActivity;
+import com.example.aida.views.legacy.MainActivity;
 import com.example.aida.R;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
