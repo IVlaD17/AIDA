@@ -80,6 +80,19 @@
     <string name="lbl_pma_account">Account Settings</string>
     <string name="lbl_pma_address">Address</string>
 
+    <string name="lbl_title_login">Login</string>
+    <string name="lbl_title_register">Register</string>
+    <string name="lbl_title_profile_view">My Profile</string>
+    <string name="lbl_title_profile_edit">Edit Profile</string>
+    <string name="lbl_title_journal">My Journal</string>
+    <string name="lbl_title_journal_add">Add Journal Entry</string>
+    <string name="lbl_title_journal_edit">Edit Journal Entry</string>
+    <string name="lbl_title_calculator">Nutritional Calculator</string>
+    <string name="lbl_title_calculator_add">Add Meal Item</string>
+    <string name="lbl_title_calculator_edit">Edit Meal Item</string>
+    <string name="lbl_title_foods_view">Foods Database</string>
+    <string name="lbl_title_menu">Main Menu</string>
+
     <!-- Button Texts -->
     <string name="btn_account_delete">Delete Account</string>
     <string name="btn_account_edit">Edit Account</string>

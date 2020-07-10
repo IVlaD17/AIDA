@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- TODO: Add Top Bar -->
 <!-- TODO: Implement ViewModel Bindings-->
 <!-- TODO: Refine Appearance -->
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.CalculatorManageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/cntAppBarMMA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/barTopBarMMA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/lbl_title_calculator_add"
+            app:layout_scrollFlags="scroll|enterAlways">
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cntNutritionTotalMMA"
@@ -23,7 +41,7 @@
         app:layout_constraintBottom_toTopOf="@id/cntFoodItemMMA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cntAppBarMMA">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
