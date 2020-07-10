@@ -44,7 +44,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_basic"
+                    android:text="@string/lbl_jma_basic"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -178,7 +178,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_medic"
+                    android:text="@string/lbl_jma_medic"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -306,7 +306,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_sleep"
+                    android:text="@string/lbl_jma_sleep"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -415,7 +415,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="0dp"
-                    android:text="@string/lbl_jm_activ"
+                    android:text="@string/lbl_jma_activ"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>

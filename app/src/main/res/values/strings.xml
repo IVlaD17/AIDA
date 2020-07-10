@@ -53,15 +53,12 @@
     <string name="hint_telephone_entry">Telephone Number</string>
 
     <!-- Label Texts -->
-    <string name="lbl_pm_personal">Personal Information</string>
-    <string name="lbl_pm_contact">Contact Details</string>
-    <string name="lbl_pm_account">Account Settings</string>
-    <string name="lbl_pm_address">Address</string>
+    <string name="lbl_ja_search">Search</string>
 
-    <string name="lbl_jm_basic">Basic Information</string>
-    <string name="lbl_jm_medic">Medication Taken</string>
-    <string name="lbl_jm_sleep">Sleep Schedule</string>
-    <string name="lbl_jm_activ">Other Activities</string>
+    <string name="lbl_jma_basic">Basic Information</string>
+    <string name="lbl_jma_medic">Medication Taken</string>
+    <string name="lbl_jma_sleep">Sleep Schedule</string>
+    <string name="lbl_jma_activ">Other Activities</string>
 
     <string name="lbl_ma_profile">My Profile</string>
     <string name="lbl_ma_journal">My Journal</string>
@@ -71,6 +68,17 @@
     <string name="lbl_mma_categories">Food Category</string>
     <string name="lbl_mma_food_item">Food Item</string>
     <string name="lbl_mma_quantity">Quantity</string>
+
+    <string name="lbl_nl_journal">Journal</string>
+    <string name="lbl_nl_foods">Foods</string>
+    <string name="lbl_nl_profile">Profile</string>
+    <string name="lbl_nl_Meal">Meal</string>
+    <string name="lbl_nl_Menu">Menu</string>
+
+    <string name="lbl_pma_personal">Personal Information</string>
+    <string name="lbl_pma_contact">Contact Details</string>
+    <string name="lbl_pma_account">Account Settings</string>
+    <string name="lbl_pma_address">Address</string>
 
     <!-- Button Texts -->
     <string name="btn_account_delete">Delete Account</string>

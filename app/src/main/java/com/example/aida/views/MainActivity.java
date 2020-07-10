@@ -86,12 +86,12 @@ public class MainActivity extends AppCompatActivity {
         countries = (ArrayList<Country>)getIntent().getSerializableExtra("Countries");
         foodItems = (ArrayList<Food>)getIntent().getSerializableExtra("FoodItems");
 
-        cClockCardView = findViewById(R.id.clock_card);
-        cTimePicker = findViewById(R.id.timePicker);
+        cClockCardView = findViewById(R.id.cntClockCLL);
+        cTimePicker = findViewById(R.id.pckClockCLL);
         cClockCardView.setVisibility(View.GONE);
 
-        cCalendarCardView = findViewById(R.id.calendar_card);
-        cDatePicker = findViewById(R.id.datePicker);
+        cCalendarCardView = findViewById(R.id.cntCalendarCAL);
+        cDatePicker = findViewById(R.id.pckCalendarCAL);
         cCalendarCardView.setVisibility(View.GONE);
 
         // Sets the toolbar as the Top App Bar;
