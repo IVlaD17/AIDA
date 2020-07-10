@@ -9,24 +9,70 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme.DayNight">
-        <activity android:name=".views.MenuActivity"></activity>
-        <activity android:name=".views.FoodsDatabaseActivity" />
-        <activity android:name=".views.MealManageActivity" />
-        <activity android:name=".views.CalculatorActivity" />
-        <activity android:name=".views.ProfileEditActivity" />
-        <activity android:name=".views.ProfileActivity" />
-        <activity android:name=".views.JournalManageActivity" />
-        <activity android:name=".views.JournalActivity" />
-        <activity android:name=".views.RegisterActivity" />
-        <activity android:name=".views.LoginActivity" />
-        <activity android:name=".views.StartActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
+        <!-- PROFILE ACTIVITIES -->
+        <activity android:name=".views.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.ProfileManageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.MainActivity" />
+        <activity android:name=".views.ProfileActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <!-- JOURNAL ACTIVITES -->
+        <activity android:name=".views.JournalActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.JournalManageActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <!-- NUTRITIONAL CALCULATOR ACTIVITIES -->
+        <activity android:name=".views.CalculatorActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.CalculatorManageActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <!-- OTHER ACTIVITIES -->
+        <activity android:name=".views.MenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".views.FoodsDatabaseActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <!-- LEGACY ACTIVITIES -->
+        <activity android:name=".views.StartActivity" >
+
+        </activity>
+        <activity android:name=".views.MainActivity" >
+
+        </activity>
     </application>
 
 </manifest>
