@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- TODO: Implement View -->
 <!-- TODO: Implement ViewModel Bindings-->
 <!-- TODO: Refine Appearance -->
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/calendar_card"
+    android:id="@+id/cntCalendarCAL"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/keyline_4"
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content">
 
         <DatePicker
-            android:id="@+id/datePicker"
+            android:id="@+id/pckCalendarCAL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
@@ -35,7 +34,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/calendar_card_btn_close"
+            android:id="@+id/btnSaveCAL"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,10 +42,24 @@
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_4"
             android:layout_marginBottom="@dimen/keyline_4"
-            android:text="@string/btn_close"
+            android:text="@string/btn_card_save"
             android:onClick="onPickerCardCloseButtonClick"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/datePicker"
+            app:layout_constraintTop_toBottomOf="@id/pckCalendarCAL"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCloseCL"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_4"
+            android:layout_marginBottom="@dimen/keyline_4"
+            android:text="@string/btn_card_close"
+            android:onClick="onPickerCardCloseButtonClick"
+            app:layout_constraintTop_toBottomOf="@id/pckCalendarCAL"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 

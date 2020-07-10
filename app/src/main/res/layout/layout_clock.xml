@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- TODO: Implement View -->
 <!-- TODO: Implement ViewModel Bindings-->
 <!-- TODO: Refine Appearance -->
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/clock_card"
+    android:id="@+id/cntClockCLL"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/keyline_4"
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content">
 
         <TimePicker
-            android:id="@+id/timePicker"
+            android:id="@+id/pckClockCLL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
@@ -33,7 +32,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/clock_card_btn_close"
+            android:id="@+id/btnSaveCCL"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,10 +40,24 @@
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_4"
             android:layout_marginBottom="@dimen/keyline_4"
-            android:text="@string/btn_close"
+            android:text="@string/btn_card_save"
             android:onClick="onPickerCardCloseButtonClick"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/timePicker"
+            app:layout_constraintTop_toBottomOf="@id/pckClockCLL"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCloseCCL"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_4"
+            android:layout_marginBottom="@dimen/keyline_4"
+            android:text="@string/btn_card_close"
+            android:onClick="onPickerCardCloseButtonClick"
+            app:layout_constraintTop_toBottomOf="@id/pckClockCLL"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

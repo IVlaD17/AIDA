@@ -115,6 +115,9 @@
     <string name="btn_ncl_add_to_meal">Add To Meal</string>
     <string name="btn_ncl_remove_item">Remove Item</string>
 
+    <string name="btn_card_close">Close</string>
+    <string name="btn_card_save">Save</string>
+
     <!-- Selection Control Labels -->
     <string name="chk_auto_login">Login Automatically</string>
     <string name="swt_previous_sleep">Has Slept</string>
