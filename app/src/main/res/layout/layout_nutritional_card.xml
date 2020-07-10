@@ -82,19 +82,33 @@
             app:layout_constraintTop_toBottomOf="@id/lblFoodCategoryNCL" />
 
         <TextView
-            android:id="@+id/lblFoodDetailsNCL"
+            android:id="@+id/lblDataLabelsNCL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/keyline_4"
             android:layout_marginTop="@dimen/keyline_2"
             android:layout_marginEnd="@dimen/keyline_4"
             android:maxLines="10"
-            android:text="@string/food_body"
+            android:text="@string/food_labels"
             android:textAppearance="?textAppearanceBody2"
             android:textAlignment="viewStart"
             app:layout_constraintTop_toBottomOf="@id/cntCardDividerNCL"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lblDataValuesNCL"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/lblDataValuesNCL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginEnd="16dp"
+            android:text="@string/food_values"
+            android:textAppearance="?textAppearanceBody2"
+            android:textAlignment="viewEnd"
+            android:maxLines="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lblDataLabelsNCL"
+            app:layout_constraintBaseline_toBaselineOf="@+id/lblDataLabelsNCL" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnActionNCL"
@@ -107,7 +121,7 @@
             android:text="@string/btn_ncl_default_action"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblFoodDetailsNCL"
+            app:layout_constraintTop_toBottomOf="@id/lblDataLabelsNCL"
             app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

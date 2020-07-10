@@ -28,7 +28,7 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
     @NonNull
     @Override
     public JournalItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_journal_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_jentry, parent, false);
         JournalItemViewHolder journalItemViewHolder = new JournalItemViewHolder(view);
         return journalItemViewHolder;
     }
@@ -63,11 +63,11 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
 
         public JournalItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            parentLayout = itemView.findViewById(R.id.entry_card);
-            cardTitle = itemView.findViewById(R.id.entry_card_title);
-            cardSubtitle = itemView.findViewById(R.id.entry_card_subtitle);
-            cardBodyLeft = itemView.findViewById(R.id.entry_card_body_left);
-            cardBodyRight = itemView.findViewById(R.id.entry_card_body_right);
+            parentLayout = itemView.findViewById(R.id.cntJEntryCardJCL);
+            cardTitle = itemView.findViewById(R.id.lblDateJCL);
+            cardSubtitle = itemView.findViewById(R.id.lblTimeJCL);
+            cardBodyLeft = itemView.findViewById(R.id.lblDataLabelsJCL);
+            cardBodyRight = itemView.findViewById(R.id.lblDataValuesJCL);
         }
     }
 }

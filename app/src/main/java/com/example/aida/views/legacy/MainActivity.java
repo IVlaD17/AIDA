@@ -224,10 +224,10 @@ public class MainActivity extends AppCompatActivity {
     public void onEntryCardExpandClick(View view){
         ConstraintLayout cardLayout = (ConstraintLayout) view.getParent();
 
-        MaterialButton expandButton = cardLayout.findViewById(R.id.entry_card_expand_button);
-        MaterialButton removeButton = cardLayout.findViewById(R.id.entry_card_button_two);
-        TextView cardBodyTextLeft = cardLayout.findViewById(R.id.entry_card_body_left);
-        TextView cardBodyTextRight = cardLayout.findViewById(R.id.entry_card_body_right);
+        MaterialButton expandButton = cardLayout.findViewById(R.id.btnDetailsToggleJCL);
+        MaterialButton removeButton = cardLayout.findViewById(R.id.btnRemoveJCL);
+        TextView cardBodyTextLeft = cardLayout.findViewById(R.id.lblDataLabelsJCL);
+        TextView cardBodyTextRight = cardLayout.findViewById(R.id.lblDataValuesJCL);
 
         if(removeButton.getVisibility() == View.GONE && cardBodyTextLeft.getMaxLines() == 1 && cardBodyTextRight.getMaxLines() == 1){
             removeButton.setVisibility(View.VISIBLE);

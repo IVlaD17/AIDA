@@ -6,7 +6,7 @@
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/entry_card"
+    android:id="@+id/cntJEntryCardJCL"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/keyline_1">
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/entry_card_avatar"
+            android:id="@+id/imgAvatarJCL"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="@dimen/keyline_4"
@@ -34,13 +34,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/entry_card_expand_button"
+            android:id="@+id/btnDetailsToggleJCL"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_2"
             android:layout_marginStart="@dimen/keyline_4"
-            android:layout_marginEnd="@dimen/keyline_0"
+            android:layout_marginEnd="16dp"
             android:onClick="onEntryCardExpandClick"
             app:icon='@drawable/ic_expand_more'
             app:iconGravity="textStart"
@@ -48,7 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
-            android:id="@+id/entry_card_title"
+            android:id="@+id/lblDateJCL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_2"
@@ -56,58 +56,57 @@
             android:text="@string/entry_title"
             android:textAppearance="?textAppearanceHeadline6"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/entry_card_avatar" />
+            app:layout_constraintStart_toEndOf="@id/imgAvatarJCL" />
         <TextView
-            android:id="@+id/entry_card_subtitle"
+            android:id="@+id/lblTimeJCL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_1"
             android:layout_marginStart="@dimen/keyline_4"
             android:text="@string/entry_subtitle"
             android:textAppearance="?textAppearanceSubtitle1"
-            app:layout_constraintTop_toBottomOf="@+id/entry_card_title"
-            app:layout_constraintStart_toEndOf="@id/entry_card_avatar" />
+            app:layout_constraintTop_toBottomOf="@+id/lblDateJCL"
+            app:layout_constraintStart_toEndOf="@id/imgAvatarJCL" />
         <TextView
-            android:id="@+id/entry_card_body_left"
+            android:id="@+id/lblDataLabelsJCL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_2"
             android:layout_marginStart="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_4"
-            android:text="@string/entry_body"
+            android:text="@string/entry_labels"
             android:textAppearance="?textAppearanceBody2"
             android:textAlignment="viewStart"
-            android:maxLines="1"
-            app:layout_constraintEnd_toStartOf="@id/entry_card_body_right"
+            android:maxLines="10"
+            app:layout_constraintEnd_toStartOf="@id/lblDataValuesJCL"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/entry_card_subtitle" />
+            app:layout_constraintTop_toBottomOf="@id/lblTimeJCL" />
 
         <TextView
-            android:id="@+id/entry_card_body_right"
-            android:layout_width="0dp"
+            android:id="@+id/lblDataValuesJCL"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/keyline_4"
-            android:layout_marginEnd="@dimen/keyline_4"
-            android:text="@string/entry_body"
+            android:layout_marginEnd="16dp"
+            android:text="@string/entry_values"
             android:textAppearance="?textAppearanceBody2"
             android:textAlignment="viewEnd"
-            android:maxLines="1"
+            android:maxLines="10"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/entry_card_body_left"
-            app:layout_constraintBaseline_toBaselineOf="@+id/entry_card_body_left" />
+            app:layout_constraintStart_toEndOf="@id/lblDataLabelsJCL"
+            app:layout_constraintBaseline_toBaselineOf="@+id/lblDataLabelsJCL" />
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:id="@+id/entry_card_button_two"
+            android:id="@+id/btnRemoveJCL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_entry_remove"
             android:layout_marginStart="@dimen/keyline_0"
             android:layout_marginEnd="@dimen/keyline_2"
-            android:visibility="gone"
             android:onClick="onJournalEntryRemoveButtonClick"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/entry_card_body_left"
+            app:layout_constraintTop_toBottomOf="@id/lblDataLabelsJCL"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

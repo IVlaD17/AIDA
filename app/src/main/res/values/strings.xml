@@ -160,12 +160,14 @@
     <!-- Entry Template -->
     <string name="entry_title">07/01/2020 Entry</string>
     <string name="entry_subtitle">07:07</string>
-    <string name="entry_body">Glucose Level: 125mg/dl \nCarbohydrates: 90 \nHumalog Insulin: 15 Units \nLantus Insulin: 0 Units \nSleep: None \nBasketball: 10:00 – 12:00</string>
+    <string name="entry_labels">Glucose Level: \nCarbohydrates: \nHumalog Insulin: \nLantus Insulin: \nSleep: \nBasketball: </string>
+    <string name="entry_values">125mg/dl\n90g\n15 Units\n0 Units\nNone\n10:00 – 12:00</string>
 
     <!-- Food Template -->
     <string name="food_title">Pizza - 100g</string>
     <string name="food_subtitle">Fast Food</string>
-    <string name="food_body">Carbohydrates: 100g \nof which sugars: 100g \nFat: 100g \nof which saturates: 100g \nEnergy: 100kcal \nFibre: 100g \nProtein: 100g \nSalt: 100g</string>
+    <string name="food_labels">Carbohydrates: \nof which sugars: \nFat: \nof which saturates: \nEnergy: \nFibre: \nProtein: \nSalt: </string>
+    <string name="food_values">100g\n100g\n100g\n100g\n100kcal\n100g\n100g\n100g</string>
 
     <!-- Profile Template -->
     <string name="profile_title">Vlad Ionica</string>
