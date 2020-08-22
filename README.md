@@ -11,3 +11,8 @@
 10. Display Type 1 / Type 2 Medication
 11. Add Phone Number to Edit Page
 12. Add Error Labels for iOS
+13. Category Navigation using tabs for Food
+14. Icons Android
+15. Icons iOS
+16. Implement Date and Time as one class
+17. Implement City and Country as one class
